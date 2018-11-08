@@ -1,0 +1,1 @@
+export const sanitizeName = name => name.toLowerCase().replace(/(\w\._\/)/, '-')

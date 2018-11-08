@@ -1,10 +1,12 @@
 import React from 'react'
+import { sanitizeName } from '../util'
 
 const PoemFormDropdown = ({ title, params }) => {
+  const lowerCaseTitle = sanitizeName(title)
   return (
-    <div id={`${title.value}-container`}>
-      <label for={title.value}>{title.name}</label>
-      <select id={title.value} name={title.value}>
+    <div id={`${lowerCaseTitle}-container`}>
+      <label for={lowerCaseTitle}>{title}</label>
+      <select id={lowerCaseTitle} name={title}>
         {params.map(param => <option value={param.value}>{param.name}</option>)}
       </select>
     </div>

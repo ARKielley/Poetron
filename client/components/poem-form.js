@@ -17,6 +17,7 @@ export default class PoemForm extends Component {
     const { styles, poets, emotions } = this.props
     return (
       <div id='parameter-bar-container' className='flex'>
+      {/*REPLACE LATER*/}
         <div id='line-length-container'>
           <label for='line-length'>Line Length</label>
           <select id='line-length' name='line-length'>
@@ -26,6 +27,7 @@ export default class PoemForm extends Component {
             <option value='4'>prose</option>
           </select>
         </div>
+        {/*REPLACE LATER*/}
         <div id='strictness-container'>
           <label for='strictness'>Strictness</label>
           <select id='line-length' name='line-length'>
@@ -34,20 +36,8 @@ export default class PoemForm extends Component {
             <option value='3'>high</option>
           </select>
         </div>
-        <div id='style-container'>
-          <label for='style'>Style/Genre</label>
-          <select id='style' name='style'>
-            {styles && styles.map(style => <option value={style.value}>{style.name}</option>)}
-          </select>
-        </div>
-        <div id='poet-container'>
-        <label for='poet'>Poet</label>
-          <select id='poet' name='poet'>
-            <option value='all'>all</option>
-            {poets && poets.map(poet => <option value={poet.value}>{poet.name}</option>)}
-          </select>
-          
-        </div>
+        <PoemFormDropdown title='Style/Genre' params={styles} />
+        <PoemFormDropdown title='Poet' params={poets} />
       </div>
     )
   }
