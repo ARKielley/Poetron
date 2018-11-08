@@ -1,6 +1,7 @@
 const brain = require('brain.js')
 
 let trainedNet;
+const punctuationRegEx = /[\r\n\!,\.;—\-?]/g
 
 function shuffle(arr) { // faster than destructuring swap
   var i, j, temp
@@ -11,6 +12,15 @@ function shuffle(arr) { // faster than destructuring swap
       arr[j] = temp
   }
   return arr
+}
+
+function filterPunctuation (percentage) {
+  return Math.random() < percentage
+}
+
+function filterReturnActive (rate) {
+  const RATE_TABLE = [0.2, 0.5, 0.8, 1]
+  return Math.random() < RATE_TABLE[rate - 1] // true means filter, false means keep
 }
 
 function getRandomSelection(arr, percentage) {
@@ -24,8 +34,12 @@ function encodeBySingleChars(arg) {
 }
 
 function tokenizeString(str) {
-  return str.replace(/([\r\n,\.;-!?])/g, (match) => ' ' + match).split(' ')
+  //fix this dumb double-replace
+  return str.replace(punctuationRegEx, (match) => ` ${match} `).split(' ').filter(t => t)
 }
+
+// console.log(tokenizeString(`i have
+// no real? friends—we? want. but, lo; happiness!`))
 
 function createDictionary(str) {
   let i = 1
@@ -112,7 +126,9 @@ console.log('initialized')
 let net = new brain.recurrent.LSTMTimeStep()
 
 net.train([[3,40,3,41,3,20,3,40,3,20]])
+net.train([[3, 99, 77, 3, 99, 77]])
 // const first = net.run([4])
 // const secone = net.run([Math.round(first)])
 // console.log(first, secone)
-console.log(net.run([3]))
+console.log(net.run([3, 99]))
+// IF YOU CAN'T FIND 
