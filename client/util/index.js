@@ -1,1 +1,1 @@
-export {sanitizeName} from './naming'
+export {sanitizeName, dictionarizeString} from './naming'

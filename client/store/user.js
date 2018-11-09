@@ -1,26 +1,38 @@
 import axios from 'axios'
 import history from '../history'
+import { dictionarizeString } from './util'
 
 /**
  * ACTION TYPES
  */
 const GET_USER = 'GET_USER'
 const REMOVE_USER = 'REMOVE_USER'
+const GET_USER_INPUT = 'GET_USER_INPUT'
 
 /**
  * INITIAL STATE
  */
 const defaultUser = {}
+const defaultState = {
+  user: defaultUser,
+  input: []
+}
 
 /**
  * ACTION CREATORS
  */
 const getUser = user => ({type: GET_USER, user})
 const removeUser = () => ({type: REMOVE_USER})
+const getUserInput = (input) => ({type: GET_USER_INPUT, input})
 
 /**
  * THUNK CREATORS
  */
+export const formatUserInput = (str, dictionary) => dispatch => {
+  const formattedStr = dictionarizeString(str, dictionary)
+  dispatch(getUserInput(formattedStr))
+}
+
 export const me = () => async dispatch => {
   try {
     const res = await axios.get('/auth/me')
@@ -59,12 +71,14 @@ export const logout = () => async dispatch => {
 /**
  * REDUCER
  */
-export default function(state = defaultUser, action) {
+export default function(state = defaultState, action) {
   switch (action.type) {
     case GET_USER:
-      return action.user
+      return {...state, user: action.user}
     case REMOVE_USER:
-      return defaultUser
+      return {...state, user: defaultUser}
+    case GET_USER_INPUT:
+      return {...state, input: action.input}
     default:
       return state
   }
