@@ -1,7 +1,7 @@
 const brain = require('brain.js')
 
 let trainedNet;
-const punctuationRegEx = /[\r\n\!,\.;—\-?]/g
+const nonWordsRegEx = /[\r\n,\.;—\-]/g
 
 function shuffle(arr) { // faster than destructuring swap
   var i, j, temp
@@ -35,7 +35,10 @@ function encodeBySingleChars(arg) {
 
 function tokenizeString(str) {
   //fix this dumb double-replace
-  return str.replace(punctuationRegEx, (match) => ` ${match} `).split(' ').filter(t => t)
+  return str.toLowerCase()
+    .replace(nonWordsRegEx, (match) => ` ${match} `)
+    .split(' ')
+    .filter(t => t)
 }
 
 // console.log(tokenizeString(`i have
@@ -45,7 +48,7 @@ function createDictionary(str) {
   let i = 1
   return tokenizeString(str).reduce((dict, curr) => {
       if (!dict[curr]) {
-        dict[curr] = 1
+        dict[curr] = i
         i++
       }
       return dict
@@ -65,18 +68,18 @@ function mergeDictionaries(...args) {
   })
 }
 
-function pairWordInputOutput(str) {
-  const tokens = tokenizeString(str)
-  const coll = []
-  for (let i = 0; i < tokens.length - 1; i++) {
-    coll.push({ input: tokens[i], output: tokens[i+1] })
-  }
-  return coll
+function dictionarizeString(str, dictionary) {
+  return tokenizeString(str).map(token => dictionary[token])
 }
 
-function trainWordPairs(coll) {
-  let net = new brain.recurrent.LSTM()
-}
+// function pairWordInputOutput(str) {
+//   const tokens = tokenizeString(str)
+//   const coll = []
+//   for (let i = 0; i < tokens.length - 1; i++) {
+//     coll.push({ input: tokens[i], output: tokens[i+1] })
+//   }
+//   return coll
+// }
 
 
 module.exports = {
@@ -125,10 +128,29 @@ console.log('initialized')
 
 let net = new brain.recurrent.LSTMTimeStep()
 
-net.train([[3,40,3,41,3,20,3,40,3,20]])
-net.train([[3, 99, 77, 3, 99, 77]])
+const testPoem = `the rain in spain
+falls mainly on the plain`
+const tokenizedPoem = tokenizeString(testPoem)
+console.log(tokenizedPoem)
+const testDictionary = createDictionary(testPoem)
+console.log('Dictionary from poem: ', testDictionary)
+const netInput = dictionarizeString(testPoem, testDictionary)
+console.log('Dictionarized poem: ', netInput)
+netTestInput = dictionarizeString('rain', testDictionary)
+console.log('Net test input: ', netTestInput)
+
+net.train([netInput])
+console.log(net.run(netTestInput))
+const jsonized = net.toJSON()
+const regotten = new brain.recurrent.LSTMTimeStep()
+regotten.fromJSON(jsonized)
+console.log(regotten)
+
+
+// net.train([[3,40,3,41,3,20,3,40,3,20]])
+// net.train([[3, 99, 77, 3, 99, 77]])
 // const first = net.run([4])
 // const secone = net.run([Math.round(first)])
 // console.log(first, secone)
-console.log(net.run([3, 99]))
+// console.log(net.run([3, 99]))
 // IF YOU CAN'T FIND 
