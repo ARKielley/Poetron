@@ -1,5 +1,6 @@
 import React, { Component, Fragment } from 'react'
 import { connect } from 'react-redux'
+import { getNetsFromServer, getFilteredSuggestions, pickSuggestion } from '../store/suggestion'
 
 class SuggestionBox extends Component {
   constructor(props) {
@@ -23,3 +24,14 @@ class SuggestionBox extends Component {
     )
   }
 }
+
+const mapState = (state) => ({
+  suggestion: state.suggestionReducer.suggestions[state.suggestionReducer.suggestionIndex]
+})
+
+const mapDispatch = (dispatch) => ({
+  getNets: () => dispatch(getNetsFromServer(this.props.options)),
+  getSuggestions: () => dispatch(getFilteredSuggestions(this.props.nets, this.props.input, this.props.filters))
+})
+
+export default connect(mapState, mapDispatch)(SuggestionBox)

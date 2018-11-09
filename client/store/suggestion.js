@@ -28,7 +28,7 @@ const getSuggestionIndex = (index) => ({type: GET_SUGGESTION_INDEX, index})
  * THUNK CREATORS
  */
 
-export const getNetsFromServer = (options, filters) => async (dispatch) => {
+export const getNetsFromServer = (options) => async (dispatch) => {
   try {
     const query = Object.keys(options).map(optKey => `${optKey}=${options[optKey]}`).join('&')
     const nets = await axios.get(`/api/nets?${query}`)
@@ -68,3 +68,4 @@ export default function(state = defaultState, action) {
       return state
   }
 }
+
