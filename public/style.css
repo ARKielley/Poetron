@@ -19,3 +19,25 @@ form div {
   margin: 1em;
   display: inline-block;
 }
+
+#parameter-bar-container {
+  display: flex;
+  font-size: 10px;
+}
+
+#suggestion-box-container {
+  background-color: yellow;
+  display: flex;
+  align-items: center;
+}
+
+textarea, #suggestion-box-container {
+  font-family: Helvetica, sans-serif;
+  font-size: 16px;
+}
+
+#main-textarea {
+  position: absolute;
+  left: 20px;
+  top: 200px;
+}

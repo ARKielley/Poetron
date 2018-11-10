@@ -63,7 +63,7 @@ export default function(state = defaultState, action) {
     case GET_NETS:
       return {...state, nets: action.nets}
     case GET_SUGGESTION_INDEX:
-      return {...state, suggestionIndex = action.suggestionIndex}
+      return {...state, suggestionIndex: action.suggestionIndex}
     default:
       return state
   }

@@ -1,6 +1,6 @@
 import axios from 'axios'
 import history from '../history'
-import { dictionarizeString } from './util'
+import { dictionarizeString } from '../util'
 
 /**
  * ACTION TYPES

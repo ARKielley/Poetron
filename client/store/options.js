@@ -9,7 +9,8 @@ import brain from 'brain.js'
 // const CHANGE_STYLE = 'CHANGE_STYLE'
 // const CHANGE_POET = 'CHANGE_POET'
 // const CHANGE_EMOTIONS = 'CHANGE_EMOTIONS'
-const CHANGE_OPTION = 'CHANGE_OPTION'
+const CHANGE_VALUE = 'CHANGE_VALUE'
+const CHANGE_AUTO = 'CHANGE_AUTO'
 
 /**
  * INITIAL STATE
@@ -27,14 +28,18 @@ const defaultState = {
  */
 // const changeLineLength = (length) => ({type: CHANGE_LINE_LENGTH, length})
 // const changeStrictness = (stictness) => ({type: CHANGE_STRICTNESS, strictness})
-const changeOption = (option, value) => ({type: CHANGE_OPTION, option, value})
+const changeValue = (option, value) => ({type: CHANGE_VALUE, option, value})
+const changeAuto = (option, setting) => ({type: CHANGE_AUTO, option, setting})
 
 /**
  * THUNK CREATORS
  */
 
 export const changeSpecifiedOption = (option, value) => (dispatch) => {
-  dispatch(changeOption(option, value))
+  dispatch(changeValue(option, value))
+}
+export const changeSpecifiedAuto = (option, setting) => (dispatch) => {
+  dispatch(changeAuto(option, setting))
 }
 
 /**
@@ -42,8 +47,10 @@ export const changeSpecifiedOption = (option, value) => (dispatch) => {
  */
 export default function(state = defaultState, action) {
   switch (action.type) {
-    case CHANGE_OPTIONS:
-      return {...state, [action.option]: action.value}
+    case CHANGE_VALUE:
+      return {...state, [action.option]: {...state[action.option], value: action.value}}
+      case CHANGE_AUTO:
+      return {...state, [action.option]: {...state[action.option], auto: action.auto}}
     default:
       return state
   }
