@@ -1,7 +1,11 @@
 'use strict'
 
 const db = require('../server/db')
-const {User} = require('../server/db/models')
+const { User, Lookup } = require('../server/db/models')
+const thomas = require('./training/data/thomas-delahaye')
+const { buildLookupFromAuthor } = require('./training/new-approach')
+
+const thomasLookup = buildLookupFromAuthor(thomas)
 
 async function seed() {
   await db.sync({force: true})
@@ -12,7 +16,12 @@ async function seed() {
     User.create({email: 'murphy@email.com', password: '123'})
   ])
 
+  const lookups = await Promise.all([
+    Lookup.create({category: 'thomas-delahaye', data: thomasLookup})
+  ])
+
   console.log(`seeded ${users.length} users`)
+  console.log(`seeded ${lookups.length} lookups`)
   console.log(`seeded successfully`)
 }
 

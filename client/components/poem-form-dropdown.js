@@ -6,7 +6,7 @@ const PoemFormDropdown = ({ title, params }) => {
   return (
     <div id={`${lowerCaseTitle}-container`}>
       <label for={lowerCaseTitle}>{title}</label>
-      <select id={lowerCaseTitle} name={title}>
+      <select id={lowerCaseTitle} name={lowerCaseTitle}>
         {params && params.map(param => <option value={param.value}>{param.name}</option>)}
       </select>
     </div>

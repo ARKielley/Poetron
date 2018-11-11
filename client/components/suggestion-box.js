@@ -1,6 +1,6 @@
 import React, { Component, Fragment } from 'react'
 import { connect } from 'react-redux'
-import { getNetsFromServer, getFilteredSuggestions, pickSuggestion } from '../store/suggestion'
+import { pickSuggestion } from '../store/suggestion'
 
 class SuggestionBox extends Component {
   constructor(props) {
@@ -25,7 +25,7 @@ class SuggestionBox extends Component {
 
   render() {
     return (
-      <div id='suggestion-box-container' style={this.props.style}>
+      <div id='suggestion-box-container' style={{...this.props.style, opacity: `${this.state.open ? 1 : 0.75}`}}>
         {this.state.open && (
           <Fragment>
             <img src='add-placeholder' onClick={() => this.props.add('test!')} />
@@ -46,7 +46,7 @@ const mapState = (state) => ({
 const mapDispatch = (dispatch) => ({
   // getNets: () => dispatch(getNetsFromServer(this.props.options)),
   // getSuggestions: () => dispatch(getFilteredSuggestions(this.props.nets, this.props.input, this.props.filters)),
-  pickSuggestion: (suggestions, index) => dispatch(suggestions, index)
+  pickSuggestion: (suggestions, index) => dispatch(pickSuggestion(suggestions, index))
 })
 
 export default connect(mapState, mapDispatch)(SuggestionBox)

@@ -3,7 +3,7 @@ import { connect } from 'react-redux';
 // import CaretCoordinates from 'textarea-caret-position'
 import { PoemFormDropdown, PoemFormSearch, PoemInput } from './index'
 import { changeSpecifiedValue, changeSpecifiedAuto } from '../store/options'
-import { getNetsFromServer, getFilteredSuggestions, pickSuggestion } from '../store/suggestion'
+import { getLookupFromServer, getFilteredSuggestions, pickSuggestion } from '../store/suggestion'
 import { getCaretCoordinates } from '../util'
 
 
@@ -14,6 +14,8 @@ class PoemForm extends Component {
     this.state = {
       filters: []
     }
+    this.sendData = this.sendData.bind(this)
+    this.createNick = this.createNick.bind(this)
   }
 
   render() {
@@ -41,7 +43,7 @@ class PoemForm extends Component {
             </select>
           </div>
           <PoemFormDropdown title='Style/Genre' params={[{name: 'test', value: 'test genre'}]} />
-          <PoemFormDropdown title='Poet' params={[{name: 'test', value: 'test poet'}]} />
+          <PoemFormDropdown title='Poet' params={[{name: 'Thomas Delahaye', value: 'thomas-delahaye'}]} />
         </div>
         <PoemInput filters={this.state.filters} />
       </div>

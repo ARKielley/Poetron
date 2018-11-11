@@ -1,4 +1,4 @@
-const punctuationRegEx = /[,\.;—\-]/g
+const punctuationRegEx = /[,\.;—\-\?!]/g
 const returnRegEx = /[\r\n]/g
 const commonWords = ['the','be','of','and','a','to','in','he','have','it','that','for','they','I','with',
 'as','not','on','she','at','by','this','we','you','do','but','from','or','which','one','would','all',

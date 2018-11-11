@@ -12,7 +12,7 @@ label {
 
 nav a {
   display: inline-block;
-  margin: 1em;
+  margin: 0.5em 1em;
 }
 
 form div {
@@ -29,6 +29,7 @@ form div {
   background-color: yellow;
   display: flex;
   align-items: center;
+  /* opacity: 0.75; */
 }
 
 textarea, #suggestion-box-container {
@@ -36,8 +37,16 @@ textarea, #suggestion-box-container {
   font-size: 16px;
 }
 
-#main-textarea {
+#entry-container textarea {
   position: absolute;
   left: 20px;
   top: 200px;
+  padding: 1em;
+}
+
+@media only screen and (max-width: 600px) {
+  #entry-container textarea {
+    width: 560px;
+    background-color: black;
+  }
 }

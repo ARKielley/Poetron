@@ -1,5 +1,8 @@
 const User = require('./user')
 const Net = require('./net')
+const Lookup = require('./lookup')
+const Author = require('./author')
+const Style = require('./style')
 
 /**
  * If we had any associations to make, this would be a great place to put them!
@@ -7,6 +10,13 @@ const Net = require('./net')
  *
  *    BlogPost.belongsTo(User)
  */
+
+// Lookup.belongsTo(Author)
+// Lookup.belongsTo(Style)
+// Author.belongsTo(Style)
+// Author.hasMany(Lookup)
+// Style.hasMany(Lookup)
+// Style.hasMany(Author)
 
 /**
  * We'll export all of our models here, so that any time a module needs a model,
@@ -16,5 +26,8 @@ const Net = require('./net')
  */
 module.exports = {
   User,
-  Net
+  Net,
+  Lookup,
+  Author,
+  Style
 }
