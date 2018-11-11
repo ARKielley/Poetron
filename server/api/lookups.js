@@ -23,6 +23,18 @@ router.get('/names', async (req, res, next) => {
   }
 })
 
+router.get('/genres', async (req, res, next) => {
+  try {
+    const allGenres = await Lookup.findAll(
+      {where: {type: 'genre'}},
+      {include: ['category']}
+    )
+    res.json(allGenres)
+  } catch (err) {
+    next(err)
+  }
+})
+
 router.get('/:category', async (req, res, next) => {
   try {
     console.log('got here')

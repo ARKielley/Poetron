@@ -13,22 +13,12 @@ router.get('/', async (req, res, next) => {
   }
 })
 
-router.post('/', async (req, res, next) => {
-  try {
-    const newNet = await Net.create(req.body)
-    console.log('success?: ', newNet)
-    res.json(newNet)
-  } catch (err) {
-    next(err)
-  }
-})
-
-router.post('/nick', async (req, res, next) => {
-  try {
-    const nickJSON = createNick()
-    const newNick = await Net.create({category: 'poetron-special', data: nickJSON})
-    res.json(newNick)
-  } catch (err) {
-    next(err)
-  }
-})
+// router.post('/', async (req, res, next) => {
+//   try {
+//     const newNet = await Net.create(req.body)
+//     console.log('success?: ', newNet)
+//     res.json(newNet)
+//   } catch (err) {
+//     next(err)
+//   }
+// })

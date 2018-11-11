@@ -1,6 +1,7 @@
 const onlyWordsRegEx = /[^a-zA-Z’ ]/g
 
 export const sanitizeName = name => name.toLowerCase().replace(/(\w\._\/)/, '-')
+export const stylizeName = name => name.split('-').map(v => v[0].toUpperCase() + v.slice(1)).join(' ')
 
 export const lastElem = coll => coll[coll.length - 1]
 

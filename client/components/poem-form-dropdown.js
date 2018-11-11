@@ -1,16 +1,24 @@
 import React from 'react'
-import { sanitizeName } from '../util'
+import { connect } from 'react-redux'
+import { sanitizeName, stylizeName } from '../util'
+import { changeSpecifiedOption } from '../store/options'
 
-const PoemFormDropdown = ({ title, params }) => {
+const PoemFormDropdown = ({ title, names }) => {
   const lowerCaseTitle = sanitizeName(title)
   return (
     <div id={`${lowerCaseTitle}-container`}>
       <label for={lowerCaseTitle}>{title}</label>
-      <select id={lowerCaseTitle} name={title}>
-        {params && params.map(param => <option value={param.value}>{param.name}</option>)}
+      <select id={lowerCaseTitle} name={title} value={this.props.value} onChange={(event) => props.changeOption(event.target.value)}>
+        {names && names.map(name => <option value={name}>{stylizeName(name)}</option>)}
       </select>
     </div>
   )
 }
 
-export default PoemFormDropdown
+mapDispatch = (dispatch) => ({
+  changeOption(value) {
+    dispatch(changeSpecifiedOption(lowerCaseTitle, value))
+  }
+})
+
+export default connect(null, mapDispatch)(PoemFormDropdown)

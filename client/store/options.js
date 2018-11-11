@@ -1,9 +1,9 @@
 import axios from 'axios'
-import brain from 'brain.js'
 
 /**
  * ACTION TYPES
  */
+const GET_INFO = 'GET_INFO'
 // const CHANGE_LINE_LENGTH = 'CHANGE_LINE_LENGTH'
 // const CHANGE_STRICTNESS = 'CHANGE_STRICTNESS'
 // const CHANGE_STYLE = 'CHANGE_STYLE'
@@ -16,30 +16,41 @@ const CHANGE_AUTO = 'CHANGE_AUTO'
  * INITIAL STATE
  */
 const defaultState = {
+  authors: [],
+  genres: [],
   lineLength: { value: 2 }, //1-4; short, medium, long, prose (hash table in form state changer)
   strictness: { value: 2 }, //1-3, same
-  style: { value: 'all', auto: false },
-  poet: { value: 'all', auto: false }, // auto dynamically changes the value depending on the result? or a thing below?
-  emotions: { value: [], auto: false } // unchecking auto keeps the auto-generated value(s)!
+  genre: 'all',
+  author: 'all', // auto dynamically changes the value depending on the result? or a thing below?
+  // emotions: { value: [], auto: false } // unchecking auto keeps the auto-generated value(s)!
 }
 
 /**
  * ACTION CREATORS
  */
+const getInfo = (authors, genres) => ({type: GET_INFO, authors, genres})
 // const changeLineLength = (length) => ({type: CHANGE_LINE_LENGTH, length})
 // const changeStrictness = (stictness) => ({type: CHANGE_STRICTNESS, strictness})
 const changeValue = (option, value) => ({type: CHANGE_VALUE, option, value})
-const changeAuto = (option, setting) => ({type: CHANGE_AUTO, option, setting})
+const changeAuto = () => ({type: CHANGE_AUTO})
 
 /**
  * THUNK CREATORS
  */
 
+export const getInfoFromServer = () => async (dispatch) => {
+  const allAuthors = await axios.get('/api/lookups/authors')
+    .map(entry => entry.category)
+  const allGenres = await axios.get('/api/lookups/genres')
+  .map(entry => entry.category)
+  dispatch(getInfo(allAuthors, allGenres))
+}
+
 export const changeSpecifiedOption = (option, value) => (dispatch) => {
   dispatch(changeValue(option, value))
 }
-export const changeSpecifiedAuto = (option, setting) => (dispatch) => {
-  dispatch(changeAuto(option, setting))
+export const toggleAuto = (option, setting) => (dispatch) => {
+  dispatch(changeAuto())
 }
 
 /**
@@ -47,10 +58,12 @@ export const changeSpecifiedAuto = (option, setting) => (dispatch) => {
  */
 export default function(state = defaultState, action) {
   switch (action.type) {
+    case GET_INFO:
+      return {...state, authors: action.authors, genres: action.genres}
     case CHANGE_VALUE:
-      return {...state, [action.option]: {...state[action.option], value: action.value}}
+      return {...state, [action.option]: action.value}
       case CHANGE_AUTO:
-      return {...state, [action.option]: {...state[action.option], auto: action.auto}}
+      return {...state, auto: !auto}
     default:
       return state
   }
