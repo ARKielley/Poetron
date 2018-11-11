@@ -5,8 +5,9 @@ import {composeWithDevTools} from 'redux-devtools-extension'
 import userReducer from './user'
 import suggestionReducer from './suggestion'
 import optionsReducer from './options'
+import detectionReducer from './detection'
 
-const reducer = combineReducers({userReducer, suggestionReducer, optionsReducer})
+const reducer = combineReducers({userReducer, suggestionReducer, optionsReducer, detectionReducer})
 const middleware = composeWithDevTools(
   applyMiddleware(thunkMiddleware, createLogger({collapsed: true}))
 )

@@ -2,6 +2,13 @@ const Sequelize = require('sequelize')
 const db = require('../db')
 
 const Lookup = db.define('lookup', {
+  type: {
+    type: Sequelize.STRING,
+    allowNull: false,
+    verify: {
+      notEmpty: true
+    }
+  },
   category: {
     type: Sequelize.STRING,
     allowNull: false,

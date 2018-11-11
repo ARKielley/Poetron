@@ -3,7 +3,7 @@
 const db = require('../server/db')
 const { User, Lookup } = require('../server/db/models')
 const { thomas, ginsberg, spenser, snyder, ashbery, fabbro, auden, shakespeare } = require('./training/data')
-const { buildLookupFromAuthor, filterAuthor } = require('./training/new-approach')
+const { buildLookupFromAuthor, filterAuthor, mergeLookups } = require('./training/new-approach')
 
 const thomasLookup = buildLookupFromAuthor(filterAuthor(thomas, 0.3, 0.3))
 const ginsbergLookup = buildLookupFromAuthor(filterAuthor(ginsberg, 0.3, 0.3))
@@ -13,6 +13,14 @@ const ashberyLookup = buildLookupFromAuthor(filterAuthor(ashbery, 0.3, 0.3))
 const fabbroLookup = buildLookupFromAuthor(filterAuthor(fabbro, 0.3, 0.3))
 const audenLookup = buildLookupFromAuthor(filterAuthor(auden, 0.3, 0.3))
 const shakespeareLookup = buildLookupFromAuthor(filterAuthor(shakespeare, 0.3, 0.3))
+
+const specialLookup = thomasLookup
+const beatLookup = mergeLookups(ginsbergLookup, snyderLookup)
+const elizabethanLookup = mergeLookups(spenserLookup, shakespeareLookup)
+const modernismLookup = mergeLookups(audenLookup, fabbroLookup)
+const newYorkSchoolLookup = ashberyLookup
+
+const allLookup = mergeLookups(specialLookup, beatLookup, elizabethanLookup, modernismLookup, newYorkSchoolLookup)
 
 async function seed() {
   await db.sync({force: true})
@@ -24,14 +32,20 @@ async function seed() {
   ])
 
   const lookups = await Promise.all([
-    Lookup.create({category: 'thomas-delahaye', data: thomasLookup}),
-    Lookup.create({category: 'allen-ginsberg', data: ginsbergLookup}),
-    Lookup.create({category: 'edmund-spenser', data: spenserLookup}),
-    Lookup.create({category: 'gary-snyder', data: snyderLookup}),
-    Lookup.create({category: 'john-ashbery', data: ashberyLookup}),
-    Lookup.create({category: 'miglior-fabbro', data: fabbroLookup}),
-    Lookup.create({category: 'w-h-auden', data: audenLookup}),
-    Lookup.create({category: 'william-shakespeare', data: shakespeareLookup}),
+    Lookup.create({type: 'author', category: 'thomas-delahaye', data: thomasLookup}),
+    Lookup.create({type: 'author', category: 'allen-ginsberg', data: ginsbergLookup}),
+    Lookup.create({type: 'author', category: 'edmund-spenser', data: spenserLookup}),
+    Lookup.create({type: 'author', category: 'gary-snyder', data: snyderLookup}),
+    Lookup.create({type: 'author', category: 'john-ashbery', data: ashberyLookup}),
+    Lookup.create({type: 'author', category: 'miglior-fabbro', data: fabbroLookup}),
+    Lookup.create({type: 'author', category: 'w-h-auden', data: audenLookup}),
+    Lookup.create({type: 'author', category: 'william-shakespeare', data: shakespeareLookup}),
+    Lookup.create({type: 'genre', category: 'poetron-special', data: specialLookup}),
+    Lookup.create({type: 'genre', category: 'beat', data: beatLookup}),
+    Lookup.create({type: 'genre', category: 'elizabethan', data: elizabethanLookup}),
+    Lookup.create({type: 'genre', category: 'modernism', data: modernismLookup}),
+    Lookup.create({type: 'genre', category: 'new-york-school', data: newYorkSchoolLookup}),
+    Lookup.create({type: 'all', category: 'all', data: allLookup})
   ])
 
   console.log(`seeded ${users.length} users`)

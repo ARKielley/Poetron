@@ -6,6 +6,7 @@ const testingData = [
 ]
 
 const brain = require('brain.js')
+const {Net} = require('../../server/db/models')
 const {tokenizeString} = require('./new-approach.js')
 const twoHundred = require('./data/two-hundred-common.js')
 
@@ -27,8 +28,8 @@ function filterThousand(arr) {
 //   }))
 // }
 
-const joinedShakespeare = encode(williamShakespeare.join())
-const joinedSnyder = encode(garySnyder.join())
+const joinedShakespeare = encode(williamShakespeare.data.join())
+const joinedSnyder = encode(garySnyder.data.join())
 
 const numberCompare = [
   {
@@ -73,29 +74,10 @@ const numberCompare = [
   }
 ]
 
-const numberCompareB = [
-  {
-    input: williamShakespeare.join(' ').slice(0, 5),
-    output: 'shakespeare'
-  },
-  {
-    input: garySnyder.join(' ').slice(0, 5),
-    output: 'snyder'
-  },
-  {
-    input: williamShakespeare.join(' ').slice(5, 10),
-    output: 'shakespeare'
-  },
-  {
-    input: garySnyder.join(' ').slice(5, 10),
-    output: 'snyder'
-  }
-]
-
 
 const testCompare = [
   {
-    input: (tokenizeString(williamShakespeare.join(' '))).slice(0, 50),
+    input: (tokenizeString(williamShakespeare.data.join(' '))).slice(0, 50),
     output: '0'
   },
   // {
@@ -107,35 +89,35 @@ const testCompare = [
   //   output: 'snyder'
   // },
   {
-    input: (tokenizeString(garySnyder.join(' '))).slice(0, 50),
+    input: (tokenizeString(garySnyder.data.join(' '))).slice(0, 50),
     output: '1'
   }
 ]
 
 console.log('starting...')
 
-let net = new brain.recurrent.LSTM()
+// let net = new brain.recurrent.LSTM()
 // let net = new brain.NeuralNetwork()
 
-net.train(testCompare, {
-  // Defaults values --> expected validation
-iterations: 4000,    // the maximum times to iterate the training data --> number greater than 0
-errorThresh: 0.0100,   // the acceptable error percentage from training data --> number between 0 and 1
-log: true,           // true to use console.log, when a function is supplied it is used --> Either true or a function
-logPeriod: 100,        // iterations between logging out --> number greater than 0
-learningRate: 0.3,    // scales with delta to effect training rate --> number between 0 and 1
-momentum: 0.1,        // scales with next layer's change value --> number between 0 and 1
-callback: null,       // a periodic call back that can be triggered while training --> null or function
-callbackPeriod: 10,   // the number of iterations through the training data between callback calls --> number greater than 0
-timeout: Infinity     // the max number of milliseconds to train for --> number greater than 0
-});
+// net.train(testCompare, {
+//   // Defaults values --> expected validation
+// iterations: 4000,    // the maximum times to iterate the training data --> number greater than 0
+// errorThresh: 0.0100,   // the acceptable error percentage from training data --> number between 0 and 1
+// log: true,           // true to use console.log, when a function is supplied it is used --> Either true or a function
+// logPeriod: 100,        // iterations between logging out --> number greater than 0
+// learningRate: 0.3,    // scales with delta to effect training rate --> number between 0 and 1
+// momentum: 0.1,        // scales with next layer's change value --> number between 0 and 1
+// callback: null,       // a periodic call back that can be triggered while training --> null or function
+// callbackPeriod: 10,   // the number of iterations through the training data between callback calls --> number greater than 0
+// timeout: Infinity     // the max number of milliseconds to train for --> number greater than 0
+// });
 // console.log(net)
 
 // let netB = new  brain.recurrent.LSTM()
 // netB.train(numberCompareB)
 // console.log(netB.toFunction())
 
-const res1 = net.run(filterThousand(tokenizeString(garySnyder[1])).slice(100, 160))
-const res2 = net.run(filterThousand(tokenizeString(williamShakespeare[0])).slice(100, 160))
+// const res1 = net.run(filterThousand(tokenizeString(garySnyder[1])).slice(100, 160))
+// const res2 = net.run(filterThousand(tokenizeString(williamShakespeare[0])).slice(100, 160))
 
-console.log(res1.match(/\d/)[0], res2.match(/\d/)[0])
+// console.log(res1.match(/\d/)[0], res2.match(/\d/)[0])

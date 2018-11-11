@@ -11,6 +11,18 @@ router.get('/', async (req, res, next) => {
   }
 })
 
+router.get('/names', async (req, res, next) => {
+  try {
+    const allNames = await Lookup.findAll(
+      {where: {type: 'author'}},
+      {include: ['category']}
+    )
+    res.json(allNames)
+  } catch (err) {
+    next(err)
+  }
+})
+
 router.get('/:category', async (req, res, next) => {
   try {
     console.log('got here')

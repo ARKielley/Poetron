@@ -1,15 +1,12 @@
 import axios from 'axios'
 import brain from 'brain.js'
-import { filterCommonWords } from '../util'
+import { filterCommonWords, shuffle, categoryTree } from '../util'
 
 const filterBank = {
   commonWords: filterCommonWords
 }
 
-const categoryTree = {
-  thomasDelahaye: {type: 'style', value: 'poetronSpecial'},
-  poetronSpecial: {type: 'all', value: 'all'}
-}
+
 
 /**
  * ACTION TYPES
@@ -56,15 +53,15 @@ export const getFilteredSuggestions = (lookup, input, filters = []) => async (di
     for (let name in filters) {
       results = filterBank[name](results, filters[name] / 100)
     }
-    let categoryParent = categoryTree[lookup.category.value]
+    let categoryParent = categoryTree[lookup.category]
     while (results.length < 5 && categoryParent) {
-      const {data} = await axios.get(`/api/lookups?${categoryParent.type}=${categoryParent.value}`)
-      categoryParent = categoryTree[categoryParent.value]
+      const {data} = await axios.get(`/api/lookups/${categoryParent}`)
+      categoryParent = categoryTree[categoryParent]
       const additionalResults = data[input]
       filters.forEach(fil => additionalResults = fil(additionalResults))
       results.concat(additionalResults)
     }
-    dispatch(getSuggestions(results.slice(0, 10)))
+    dispatch(getSuggestions(shuffle(results).slice(0, 10)))
   } catch (err) {
     console.error(err)
   }

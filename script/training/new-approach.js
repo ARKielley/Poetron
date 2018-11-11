@@ -4,7 +4,8 @@ const commonWords = require('./data/two-hundred-common')
 module.exports = { 
   shuffle, tokenizeString,
   getAllIndices, findSurroundingTokens, 
-  buildLookupFromAuthor, filterAuthor
+  buildLookupFromAuthor, filterAuthor,
+  mergeLookups
 }
 
 const irrelevantRegEx = /[^\s,\.;—\-’a-zA-Z]/g
@@ -26,7 +27,6 @@ function filterCommonWords(str, commonPercent, filterPercent) { // <= 1
   const wordPortion = commonWords.slice(0, Math.floor(commonWords.length * commonPercent))
   const splitStr = tokenizeString(str)
   return splitStr.filter(word => {
-    console.log('word: ', word, !(commonWords.includes(word) && Math.random() <= filterPercent))
     return !(commonWords.includes(word) && Math.random() <= filterPercent)
   })
   return splitStr.join(' ')
@@ -71,6 +71,16 @@ function buildLookupFromAuthor(author) {
     })
   })
   return lookup
+}
+
+function mergeLookups(...lookups) {
+  return lookups.reduce((total, current) => {
+    for (let word in current) {
+      if (total[word]) total[word] = [...total[word], ...current[word]]
+      else total[word] = current[word]
+    }
+    return total
+  })
 }
 
 // console.log(buildLookupFromAuthor(thomas))

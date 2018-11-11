@@ -18,6 +18,17 @@ const commonWords = ['the','be','of','and','a','to','in','he','have','it','that'
 
 
 
+export const shuffle = (arr) => { 
+  let i, j, temp
+  for (i = arr.length - 1; i > 0; i--) {
+      j = Math.floor(Math.random() * (i + 1))
+      temp = arr[i] // faster than destructuring swap
+      arr[i] = arr[j] 
+      arr[j] = temp
+  }
+  return arr
+}
+
 export const filterPunctuation = (results, percentage) => results.filter(res => {
   if (Math.random() <= percentage) return !punctuationRegEx.test(res)
 })

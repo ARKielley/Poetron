@@ -2,6 +2,7 @@ import React, { Component } from 'react'
 import { connect } from 'react-redux'
 import { SuggestionBox } from './index'
 import { getLookupFromServer, getFilteredSuggestions } from '../store/suggestion'
+import { detectUserStyle } from '../store/detection'
 import { getCaretCoordinates, lastElem } from '../util'
 import { TrainStream } from '../../node_modules/brain.js';
 
@@ -86,11 +87,15 @@ class PoemInput extends Component {
   }
 }
 
-const mapState = (state) => ({ lookup: state.suggestionReducer.lookup })
+const mapState = (state) => ({ 
+  lookup: state.suggestionReducer.lookup,
+
+})
 
 const mapDispatch = (dispatch) => ({
   getLookup: (options) => dispatch(getLookupFromServer(options)),
-  getSuggestions: (lookup, input, filters) => dispatch(getFilteredSuggestions(lookup, input, filters))
+  getSuggestions: (lookup, input, filters) => dispatch(getFilteredSuggestions(lookup, input, filters)),
+  detectStyle: (input) => dispatch(detectUserStyle(input))
 })
 
 export default connect(mapState, mapDispatch)(PoemInput)
