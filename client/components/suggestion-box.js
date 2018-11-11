@@ -23,24 +23,39 @@ class SuggestionBox extends Component {
     this.props.pickSuggestion(suggestions, suggestionIndex)
   }
 
+  // getStyle() {
+  //   return {
+  //     ...this.props.style,
+  //     opacity: this.state.
+  //     backgroundColor: this.state.open ? '#eeeeee' : 'white'
+  //   }
+  // }
+
   render() {
+    const opacity = this.state.open ? 1 : 0.75
+    const backgroundColor = this.state.open ? 'rgba(238,238,238,0.6)' : 'transparent'
+    const borderColor = this.state.open ? '#B5342F' : 'transparent'
+    const currentSuggestion = this.props.suggestions[this.props.suggestionIndex]
     return (
-      <div id='suggestion-box-container' style={{...this.props.style, opacity: `${this.state.open ? 1 : 0.75}`}}>
+      <div id='suggestion-box-container' style={{...this.props.style, borderColor, opacity, backgroundColor}}>
         {this.state.open && (
           <Fragment>
-            <img src='add-placeholder' onClick={() => this.props.add('test!')} />
-            <span>{this.props.suggestion}securitron</span>
-            <img src='refresh-placeholder' onClick={this.handleRefresh} />
+            <img className='suggestion-icon' src='/edit.svg' onClick={() => this.props.add(currentSuggestion || 'the')} />
+            <span>{currentSuggestion || 'the'}</span>
+            <img className='suggestion-icon' src='/two-circling-arrows.svg' onClick={this.handleRefresh} />
           </Fragment>
         )}
-        <img src={this.state.open ? 'close-placeholder' : 'open-placeholder'} onClick={this.handleToggle} />
+        <img className='suggestion-icon' 
+        src={this.state.open ? '/left-arrow-inside-a-circle.svg' : '/play-button.svg'} 
+        onClick={this.handleToggle} />
       </div>
     )
   }
 }
 
 const mapState = (state) => ({
-  suggestion: state.suggestionReducer.suggestions[state.suggestionReducer.suggestionIndex]
+  suggestions: state.suggestionReducer.suggestions,
+  suggestionIndex: state.suggestionReducer.suggestionIndex
 })
 
 const mapDispatch = (dispatch) => ({

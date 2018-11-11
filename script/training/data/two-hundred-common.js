@@ -1,6 +1,4 @@
-const punctuationRegEx = /[,\.;—\-\?!]/g
-const returnRegEx = /[\r\n]/g
-const commonWords = ['the','be','of','and','a','to','in','he','have','it','that','for','they','I','with',
+const commonWords = ['the','be','of','and','a','to','in','he','have','it','that','for','they','i','with',
 'as','not','on','she','at','by','this','we','you','do','but','from','or','which','one','would','all',
 'will','there','say','who','make','when','can','more','if','no','man','out','other','so','what','time',
 'up','go','about','than','into','could','state','only','new','year','some','take','come','these','know',
@@ -16,18 +14,4 @@ const commonWords = ['the','be','of','and','a','to','in','he','have','it','that'
 'lead','system','set','order','eye','plan','run','keep','face','fact','group','play','stand','increase',
 'early','course','change','help','line']
 
-
-
-export const filterPunctuation = (results, percentage) => results.filter(res => {
-  if (Math.random() <= percentage) return !punctuationRegEx.test(res)
-})
-export const filterReturns = (results, percentage) => results.filter(res => {
-  if (Math.random() <= percentage) return !returnRegEx.test(res)
-})
-export const filterCommonWords = (results, percentage) => results.filter(res => {
-  const wordPortion = commonWords.slice(0, Math.floor(commonWords.length * percentage))
-  console.log('filtering with a slice of ', wordPortion)
-  return !wordPortion.includes(res)
-})
-
-export const curryFilter = (filter, percentage) => (results) => filter(results, percentage)
+module.exports = commonWords

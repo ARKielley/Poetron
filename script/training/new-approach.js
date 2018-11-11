@@ -1,4 +1,5 @@
 const thomas = require('./data/thomas-delahaye')
+const commonWords = require('./data/two-hundred-common')
 
 module.exports = { 
   shuffle, tokenizeString,
@@ -19,6 +20,22 @@ function shuffle(arr) {
       arr[j] = temp
   }
   return arr
+}
+
+function filterCommonWords(str, commonPercent, filterPercent) { // <= 1
+  const wordPortion = commonWords.slice(0, Math.floor(commonWords.length * commonPercent))
+  const splitStr = tokenizeString(str)
+  return splitStr.filter(word => {
+    console.log('word: ', word, !(commonWords.includes(word) && Math.random() <= filterPercent))
+    return !(commonWords.includes(word) && Math.random() <= filterPercent)
+  })
+  return splitStr.join(' ')
+}
+
+function filterAuthor(author, commonPercent, filterPercent) {
+  let authorCopy = {...author}
+  authorCopy.data.forEach(poem => poem = filterCommonWords(poem, commonPercent, filterPercent))
+  return authorCopy
 }
 
 function tokenizeString(str) {

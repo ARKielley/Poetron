@@ -3,9 +3,9 @@
 const db = require('../server/db')
 const { User, Lookup } = require('../server/db/models')
 const thomas = require('./training/data/thomas-delahaye')
-const { buildLookupFromAuthor } = require('./training/new-approach')
+const { buildLookupFromAuthor, filterAuthor } = require('./training/new-approach')
 
-const thomasLookup = buildLookupFromAuthor(thomas)
+const thomasLookup = buildLookupFromAuthor(filterAuthor(thomas, 0.3, 0.5))
 
 async function seed() {
   await db.sync({force: true})

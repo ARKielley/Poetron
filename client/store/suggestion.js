@@ -1,6 +1,10 @@
 import axios from 'axios'
 import brain from 'brain.js'
-import { SSL_OP_CIPHER_SERVER_PREFERENCE } from 'constants';
+import { filterCommonWords } from '../util'
+
+const filterBank = {
+  commonWords: filterCommonWords
+}
 
 const categoryTree = {
   thomasDelahaye: {type: 'style', value: 'poetronSpecial'},
@@ -37,22 +41,26 @@ const getSuggestionIndex = (index) => ({type: GET_SUGGESTION_INDEX, index})
 export const getLookupFromServer = (category) => async (dispatch) => {
   try {
     // const query = Object.keys(options).map(optKey => `${optKey}=${options[optKey]}`).join('&')
-    const lookup = await axios.get(`/api/lookups?${category.type}=${category.value}`)
-    dispatch(getNewLookup(lookup))
+    const {data} = await axios.get(`/api/lookups/${category}`)
+    dispatch(getNewLookup(data))
   } catch (err) {
     console.error(err)
   }
 }
 
-export const getFilteredSuggestions = (category, input, filters = []) => async (dispatch) => {
+export const getFilteredSuggestions = (lookup, input, filters = []) => async (dispatch) => {
   try {
-    let results = lookup[input]
-    filters.forEach(fil => results = fil(results))
+    console.log(lookup)
+    let results = lookup.data[input] || []
+    // filters.forEach(fil => 
+    for (let name in filters) {
+      results = filterBank[name](results, filters[name] / 100)
+    }
     let categoryParent = categoryTree[lookup.category.value]
     while (results.length < 5 && categoryParent) {
-      const additionalLookup = await axios.get(`/api/lookups?${categoryParent.type}=${categoryParent.value}`)
+      const {data} = await axios.get(`/api/lookups?${categoryParent.type}=${categoryParent.value}`)
       categoryParent = categoryTree[categoryParent.value]
-      const additionalResults = additionalLookup[input]
+      const additionalResults = data[input]
       filters.forEach(fil => additionalResults = fil(additionalResults))
       results.concat(additionalResults)
     }
@@ -63,7 +71,7 @@ export const getFilteredSuggestions = (category, input, filters = []) => async (
 }
 
 export const pickSuggestion = (suggestions, suggestionIndex) => (dispatch) => {
-  const nextIndex = 0
+  let nextIndex = 0
   while (nextIndex === suggestionIndex && suggestions.length > 1) {
     nextIndex = Math.floor(Math.random() * suggestions.length)
   }
@@ -77,11 +85,11 @@ export const pickSuggestion = (suggestions, suggestionIndex) => (dispatch) => {
 export default function(state = defaultState, action) {
   switch (action.type) {
     case GET_NEW_LOOKUP:
-      return {...state, lookups: [action.lookup]}
+      return {...state, lookup: action.lookup}
     case GET_SUGGESTIONS:
       return {...state, suggestions: action.suggestions}
     case GET_SUGGESTION_INDEX:
-      return {...state, suggestionIndex: action.suggestionIndex}
+      return {...state, suggestionIndex: action.index}
     default:
       return state
   }

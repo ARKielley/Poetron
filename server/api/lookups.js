@@ -11,4 +11,15 @@ router.get('/', async (req, res, next) => {
   }
 })
 
+router.get('/:category', async (req, res, next) => {
+  try {
+    console.log('got here')
+    const lookup = await Lookup.findOne({where: { category: req.params.category }})
+    console.log(lookup)
+    res.json(lookup)
+  } catch (err) {
+    next(err)
+  }
+})
+
 router.get('/')
