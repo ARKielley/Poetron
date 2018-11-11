@@ -4,7 +4,7 @@ const commonWords = require('./data/two-hundred-common')
 module.exports = { 
   shuffle, tokenizeString,
   getAllIndices, findSurroundingTokens, 
-  buildLookupFromAuthor
+  buildLookupFromAuthor, filterAuthor
 }
 
 const irrelevantRegEx = /[^\s,\.;—\-’a-zA-Z]/g
@@ -73,4 +73,4 @@ function buildLookupFromAuthor(author) {
   return lookup
 }
 
-console.log(buildLookupFromAuthor(thomas))
+// console.log(buildLookupFromAuthor(thomas))

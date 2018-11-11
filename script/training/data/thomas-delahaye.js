@@ -2,7 +2,6 @@
 
 const thomasDelahaye = {
   name: 'thomas-delahaye',
-  date: '2000-2018',
   genre: 'poetron-special',
   data: [
 `There you are!
@@ -1551,11 +1550,7 @@ otine otine
 Rping through our suitzz
 the xan hits n i
  a little myth and legend i see my timeline like a little pimple on the world. i want legacy and even that’s childish and sour ! . u alrite london? the band is playing at @villageunderground tomorrow night w @laurenauder and i can’t wait. today ill b bopping around shoreditch in my idiot pants ! i u
-lon`,
-
-//////////////////////////////////////////////////////
-
-``
+lon`
   ]
 }
 
