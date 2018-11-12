@@ -52,6 +52,7 @@ export const getFilteredSuggestions = (lookup, input, filters = []) => async (di
     let results = lookup.data[input] || []
     // filters.forEach(fil => 
     for (let name in filters) {
+      console.log(name)
       if (filters[name] > 0) results = filterBank[name](results, filters[name] / 100)
     }
     let categoryParent = categoryTree[lookup.category]

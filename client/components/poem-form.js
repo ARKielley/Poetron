@@ -14,28 +14,27 @@ class PoemForm extends Component {
   constructor(props) {
     super(props)
     this.state = {
-      filtersOpen: false,
       filters: {
         commonWords: 0
       }
     }
-    // this.changeFilter = this.changeFilter.bind(this)
+    this.changeFilter = this.changeFilter.bind(this)
     // this.toggleFilters = this.toggleFilters.bind(this)
   }
 
   componentDidMount() {
     this.props.getInfoFromServer()
-    this.props.createNet()
+    // this.props.createNet()
   }
 
-  // changeFilter(target) {
-  //   console.log('filtering at ', target.value)
-  //   this.setState({
-  //     filters: {
-  //       [target.name]: target.value
-  //     }
-  //   })
-  // }
+  changeFilter(target) {
+    console.log('filtering at ', target.value)
+    this.setState({
+      filters: {
+        commonWords: target.value
+      }
+    })
+  }
 
   // toggleFilters() {
   //   this.setState(prevState => ({
@@ -50,13 +49,11 @@ class PoemForm extends Component {
         <div id='parameter-bar-container' className='flex'>
           <PoemFormGenre key='1' title='Genre' value={this.props.genre} names={this.props.genres} /> <br />
           <PoemFormDropdown key='2' title='Author' value={this.props.author} names={this.props.authors} />
-          {/*<span>Filters</span><button onClick={this.toggleFilters}>
-            {this.state.filtersOpen ? '-' : '+'}
-          </button>
-          {this.state.filtersOpen && <FilterBox changeFilter={this.changeFilter} 
-          values={this.state.filters} />}*/}<br />
           <input type='checkbox' id='check-me' checked={this.props.auto} onClick={this.props.handleCheck} />
           <span>Auto</span>
+          <br />
+          {/*<FilterBox changeFilter={this.changeFilter} 
+          values={this.state.filters} />*/}
         </div>
         <PoemInput filters={this.state.filters} />
       </div>

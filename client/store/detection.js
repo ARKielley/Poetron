@@ -1,39 +1,39 @@
 import axios from 'axios'
 import brain from 'brain.js'
-import { tokenizeString, filterCommonWords,  categoryTree } from '../util'
+import { tokenizeString, filterCommonWords,  categoryTree, shuffle } from '../util'
 const { thomas, ginsberg, spenser, snyder, ashbery, fabbro, auden, shakespeare } = require('../../script/training/data')
 
   const firstHundredAuthors = [
     {
-      input: (tokenizeString(thomas.data.join(' '))).slice(0, 30),
+      input: (tokenizeString(shuffle(thomas.data).join(' '))).slice(0, 30),
       output: '1'
     },
     {
-      input: (tokenizeString(ginsberg.data.join(' '))).slice(0, 30),
+      input: (tokenizeString(shuffle(ginsberg.data).join(' '))).slice(0, 30),
       output: '2'
     },
     {
-      input: (tokenizeString(spenser.data.join(' '))).slice(0, 30),
+      input: (tokenizeString(shuffle(spenser.data).join(' '))).slice(0, 30),
       output: '3'
     },
     {
-      input: (tokenizeString(snyder.data.join(' '))).slice(0, 30),
+      input: (tokenizeString(shuffle(snyder.data).join(' '))).slice(0, 30),
       output: '4'
     },
     {
-      input: (tokenizeString(ashbery.data.join(' '))).slice(0, 30),
+      input: (tokenizeString(shuffle(ashbery.data).join(' '))).slice(0, 30),
       output: '5'
     },
     {
-      input: (tokenizeString(fabbro.data.join(' '))).slice(0, 30),
+      input: (tokenizeString(shuffle(fabbro.data).join(' '))).slice(0, 30),
       output: '6'
     },
     {
-      input: (tokenizeString(auden.data.join(' '))).slice(0, 30),
+      input: (tokenizeString(shuffle(auden.data).join(' '))).slice(0, 30),
       output: '7'
     },
     {
-      input: (tokenizeString(shakespeare.data.join(' '))).slice(0, 30),
+      input: (tokenizeString(shuffle(shakespeare.data).join(' '))).slice(0, 30),
       output: '8'
     }
   ]
