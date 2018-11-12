@@ -6,7 +6,7 @@ export const categoryTree = {
   "miglior-fabbro": 'modernism',
   "thomas-delahaye": 'poetron-special',
   "w-h-auden": 'modernism',
-  "william-shakespeare": 'elizbethan',
+  "william-shakespeare": 'elizabethan',
   beat: 'all',
   elizabethan: 'all',
   modernism: 'all',

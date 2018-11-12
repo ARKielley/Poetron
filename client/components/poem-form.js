@@ -24,7 +24,7 @@ class PoemForm extends Component {
 
   componentDidMount() {
     this.props.getInfoFromServer()
-    // this.props.createNet()
+    this.props.createNet()
   }
 
   changeFilter(target) {

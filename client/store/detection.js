@@ -3,29 +3,31 @@ import brain from 'brain.js'
 import { tokenizeString, filterCommonWords,  categoryTree, shuffle, filterAuthor } from '../util'
 const { thomas, ginsberg, spenser, snyder, ashbery, fabbro, auden, shakespeare } = require('../../script/training/data')
 
+const sliceSize = 100;
+
   const firstHundredAuthors = [
     {
-      input: (tokenizeString(shuffle(filterAuthor(thomas, 0.5, 0.5).data).join(' '))).slice(0, 100),
+      input: (tokenizeString(shuffle(filterAuthor(thomas, 0.5, 0.5).data).join(' '))).slice(0, sliceSize),
       output: '1'
     },
     {
-      input: (tokenizeString(shuffle(filterAuthor(ginsberg, 0.5, 0.5).data).join(' '))).slice(0, 100),
+      input: (tokenizeString(shuffle(filterAuthor(ginsberg, 0.5, 0.5).data).join(' '))).slice(0, sliceSize),
       output: '2'
     },
     {
-      input: (tokenizeString(shuffle(filterAuthor(spenser, 0.5, 0.5).data).join(' '))).slice(0, 100),
+      input: (tokenizeString(shuffle(filterAuthor(spenser, 0.5, 0.5).data).join(' '))).slice(0, sliceSize),
       output: '3'
     },
     {
-      input: (tokenizeString(shuffle(filterAuthor(snyder, 0.5, 0.5).data).join(' '))).slice(0, 100),
+      input: (tokenizeString(shuffle(filterAuthor(snyder, 0.5, 0.5).data).join(' '))).slice(0, sliceSize),
       output: '4'
     },
     {
-      input: (tokenizeString(shuffle(filterAuthor(ashbery, 0.5, 0.5).data).join(' '))).slice(0, 100),
+      input: (tokenizeString(shuffle(filterAuthor(ashbery, 0.5, 0.5).data).join(' '))).slice(0, sliceSize),
       output: '5'
     },
     {
-      input: (tokenizeString(shuffle(filterAuthor(fabbro, 0.5, 0.5).data).join(' '))).slice(0, 100),
+      input: (tokenizeString(shuffle(filterAuthor(fabbro, 0.5, 0.5).data).join(' '))).slice(0, sliceSize),
       output: '6'
     },
     {
