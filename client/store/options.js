@@ -20,8 +20,7 @@ const CHANGE_AUTO = 'CHANGE_AUTO'
 const defaultState = {
   authors: [],
   genres: [],
-  lineLength: { value: 2 }, //1-4; short, medium, long, prose (hash table in form state changer)
-  strictness: { value: 2 }, //1-3, same
+  auto: false,
   genre: 'all',
   author: 'all', // auto dynamically changes the value depending on the result? or a thing below?
   // emotions: { value: [], auto: false } // unchecking auto keeps the auto-generated value(s)!
@@ -67,7 +66,7 @@ export const selectAuthor = (value) => (dispatch) => {
   dispatch(changeAuthor(value))
 }
 
-export const toggleAuto = (option, setting) => (dispatch) => {
+export const handleCheck = (option, setting) => (dispatch) => {
   dispatch(changeAuto())
 }
 
@@ -85,7 +84,7 @@ export default function(state = defaultState, action) {
     case CHANGE_AUTHOR:
       return {...state, author: action.value}
     case CHANGE_AUTO:
-      return {...state, auto: !auto}
+      return {...state, auto: !state.auto}
     default:
       return state
   }

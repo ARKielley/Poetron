@@ -3,8 +3,8 @@ import { connect } from 'react-redux'
 import { SuggestionBox } from './index'
 import { getLookupFromServer, getFilteredSuggestions } from '../store/suggestion'
 // import { detectUserStyle, detectBackEnd } from '../store/detection'
-import {selectAuthor} from '../store/options'
-import { getCaretCoordinates, lastElem, tokenizeString, authorLookup } from '../util'
+import {selectAuthor, selectGenre} from '../store/options'
+import { getCaretCoordinates, lastElem, tokenizeString, authorLookup, categoryTree } from '../util'
 
 const punctuationRegEx = /[\s,\.;—\-\/]/g
 const breakRegEx = /[\s —\/]/g
@@ -49,9 +49,14 @@ class PoemInput extends Component {
     // if (punctuationRegEx.test(lastElem(event.target.value))) {
       this.props.getSuggestions(lookup, lastWord, filters)
       // this.props.detectStyle(this.state.text)
-      const authorNum = this.props.net.run(tokenizeString(this.state.text)).match(/\d/)[0]
-      const detectedAuthor = authorLookup[authorNum]
-      if (detectedAuthor) this.props.updateAuthor(detectedAuthor)
+      if (this.props.auto) {
+        const authorNum = this.props.net.run(tokenizeString(this.state.text)).match(/\d/)[0]
+        const detectedAuthor = authorLookup[authorNum]
+        if (detectedAuthor) {
+          this.props.updateAuthor(detectedAuthor)
+          this.props.updateGenre(categoryTree[detectedAuthor])
+        }
+      }
     // }
   }
 
@@ -89,14 +94,16 @@ class PoemInput extends Component {
 
 const mapState = (state) => ({ 
   lookup: state.suggestionReducer.lookup,
-  net: state.detectionReducer.net
+  net: state.detectionReducer.net,
+  auto: state.optionsReducer.auto
 })
 
 const mapDispatch = (dispatch) => ({
   getLookup: (options) => dispatch(getLookupFromServer(options)),
   getSuggestions: (lookup, input, filters) => dispatch(getFilteredSuggestions(lookup, input, filters)),
   detectStyle: (input) => dispatch(detectUserStyle(input)),
-  updateAuthor: (author) => dispatch(selectAuthor(author))
+  updateAuthor: (author) => dispatch(selectAuthor(author)),
+  updateGenre: (genre) => dispatch(selectGenre(genre))
 })
 
 export default connect(mapState, mapDispatch)(PoemInput)

@@ -23,6 +23,18 @@ nav a, label {
   color: white;
 }
 
+span {
+  font-size: 20px;
+  color: white;
+  margin-left: 10px;
+}
+
+#check-me {
+  width: 20px;
+  height: 20px;
+  margin-left: 200px;
+}
+
 
 form div {
   margin: 1em;
@@ -64,6 +76,7 @@ textarea, #suggestion-box-container {
   left: 40px;
   top: 200px;
   padding: 3em 2em;
+  margin-bottom: 30px;
 }
 
 select {

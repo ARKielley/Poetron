@@ -2,10 +2,11 @@ import React, { Component } from 'react'
 import { connect } from 'react-redux';
 // import CaretCoordinates from 'textarea-caret-position'
 import { PoemFormDropdown, PoemFormGenre, PoemInput, FilterBox } from './index'
-import { changeSpecifiedValue, toggleAuto, getInfoFromServer } from '../store/options'
+import { changeSpecifiedValue, getInfoFromServer, handleCheck } from '../store/options'
 import { createNet } from '../store/detection'
 import { getLookupFromServer, getFilteredSuggestions, pickSuggestion } from '../store/suggestion'
 import { getCaretCoordinates } from '../util'
+import { throws } from 'assert';
 
 
 
@@ -18,8 +19,8 @@ class PoemForm extends Component {
         commonWords: 0
       }
     }
-    this.changeFilter = this.changeFilter.bind(this)
-    this.toggleFilters = this.toggleFilters.bind(this)
+    // this.changeFilter = this.changeFilter.bind(this)
+    // this.toggleFilters = this.toggleFilters.bind(this)
   }
 
   componentDidMount() {
@@ -27,20 +28,20 @@ class PoemForm extends Component {
     this.props.createNet()
   }
 
-  changeFilter(target) {
-    console.log('filtering at ', target.value)
-    this.setState({
-      filters: {
-        [target.name]: target.value
-      }
-    })
-  }
+  // changeFilter(target) {
+  //   console.log('filtering at ', target.value)
+  //   this.setState({
+  //     filters: {
+  //       [target.name]: target.value
+  //     }
+  //   })
+  // }
 
-  toggleFilters() {
-    this.setState(prevState => ({
-      filtersOpen: !prevState.filtersOpen
-    }))
-  }
+  // toggleFilters() {
+  //   this.setState(prevState => ({
+  //     filtersOpen: !prevState.filtersOpen
+  //   }))
+  // }
 
   render() {
     // const { styles, poets, emotions } = this.props
@@ -53,7 +54,9 @@ class PoemForm extends Component {
             {this.state.filtersOpen ? '-' : '+'}
           </button>
           {this.state.filtersOpen && <FilterBox changeFilter={this.changeFilter} 
-          values={this.state.filters} />}*/}
+          values={this.state.filters} />}*/}<br />
+          <input type='checkbox' id='check-me' checked={this.props.auto} onClick={this.props.handleCheck} />
+          <span>Auto</span>
         </div>
         <PoemInput filters={this.state.filters} />
       </div>
@@ -73,6 +76,9 @@ const mapDispatch = (dispatch) => ({
   },
   createNet() {
     dispatch(createNet())
+  },
+  handleCheck() {
+    dispatch(handleCheck())
   }
 })
 
