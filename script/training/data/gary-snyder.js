@@ -184,7 +184,84 @@ Boulders at night, it stays
 Frightened outside the
 Range of my campfire
 I go to meet it at the
-Edge of the light `
+Edge of the light `,
+
+`Swung from the toes out,
+Belly-breath riding on the knuckles,   
+The ten-pound maul lifts up,
+Sails in an arc overhead,
+And then lifts you!
+
+It floats, you float,
+For an instant of clear far sight—
+Eye on the crack in the end-grain   
+Angle of the oak round
+Stood up to wait to be split.
+
+The maul falls—with a sigh—the wood   
+Claps apart
+                and lies twain—
+In a wink. As the maul
+Splits all, may
+
+You two stay together.`,
+
+`The sour smell,
+blue stain,
+        water squirts out round the wedge,
+
+Lifting quarters of rounds
+covered with ants,
+"a living glove of ants upon my hand"
+the poll of the sledge a bit peened over
+so the wedge springs off and tumbles
+ ringing like high-pitched bells
+        into the complex duff of twigs
+        poison oak, bark, sawdust,
+        shards of logs,
+
+And the sweat drips down.
+ Smell of crushed ants.
+The lean and heave on the peavey
+that breaks free the last of a bucked
+ three-foot round,
+         it lies flat on smashed oaklings—
+
+Wedge and sledge, peavey and maul,
+little axe, canteen, piggyback can
+of saw-mix gas and oil for the chain,
+knapsack of files and goggles and rags,
+
+All to gather the dead and the down.
+the young men throw splits on the piles
+bodies hardening, learning the pace
+and the smell of tools from this delve
+in the winter
+      death-topple of elderly oak.
+Four cords.`,
+
+`A few light flakes of snow
+Fall in the feeble sun;
+Birds sing in the cold,
+A warbler by the wall. The plum
+Buds tight and chill soon bloom.
+The moon begins first
+Fourth, a faint slice west
+At nightfall. Jupiter half-way
+High at the end of night-
+Meditation. The dove cry
+Twangs like a bow.
+At dawn Mt. Hiei dusted white
+On top; in the clear air
+Folds of all the gullied green
+Hills around the town are sharp,
+Breath stings. Beneath the roofs
+Of frosty houses
+Lovers part, from tangle warm
+Of gentle bodies under quilt
+And crack the icy water to the face
+And wake and feed the children
+And grandchildren that they love.`
 ]}
 
 module.exports = garySnyder

@@ -1550,7 +1550,352 @@ otine otine
 Rping through our suitzz
 the xan hits n i
  a little myth and legend i see my timeline like a little pimple on the world. i want legacy and even that’s childish and sour ! . u alrite london? the band is playing at @villageunderground tomorrow night w @laurenauder and i can’t wait. today ill b bopping around shoreditch in my idiot pants ! i u
-lon`
+lon`,
+
+`You saw rooms of teams
+And what of it? 
+Wind on my nipples
+There’s all the printed running water you could ever want
+I feel for the root systems
+but tremble what they are to me
+Pair says I’ll leave them there 
+There’re two ways there’re
+as so is the saying 
+I wrote in a garage
+in an remote go-round of folly
+Where you sat as you listened
+there were signs no one cared about you there
+They told you I was an idiot
+I fragmented Bennett’s face in my mind
+and fall out with him 
+But I never loved his sequence 
+even in this ramble of houses 
+I surfaced chains of reports about people that suck
+Would I have done that 13 years
+for a cod?
+
+Busted once
+Caught eating out 
+If it were at a cemetary it might be a felony
+because I could be there for the bodies
+A pain in the ass, not to
+cheer me on
+Totally different windows
+Pairs of me might’ve destroyed any evidence
+Fear of the remorse of the double might have destroyed any capability cableable to me 
+Fear of the rent would have doubled my conscious doubling of capability in me to be two
+Which without both of their mothers 
+I hid the manifold from my taken work
+from each and every one
+I could think it could be good while doing there
+but then see what it is when I can’t see it
+What are you doing here said
+in the key of G to C, whole rondo
+wasted on the modulating to and from
+Whole notes coughed out, interrupted
+by a The Guitar Player piece
+that doesn’t even go into me
+I couldn’t be taken around like that
+don’t I like a stomach that pauses while eating
+do I have some kind of pride that is not measly
+Time to bury its furniture without crossing 
+over into harmony
+I’d rather drip from bedsores than it me
+if I had to, I’d trust the water that doesn’t
+buy throughout 
+
+For you were my wind
+Meter, or mind, for when morning will come
+and evening is night, often wrong
+Not supposed to have consensus
+for the chord change 
+Not a one, a thing is not
+Is that what you’re doing?
+Walking the length of a balcony
+Turn to the right or left, without remark
+Whether I’m hurrying 
+Whistle at my back 
+I singe the directory’s pages 
+A shameful reminder of jellies 
+I know not one of them has seen me in return
+I cannot know what has been had in them
+Sore as hell
+Wiser than in an Olympia dormitory 
+Ate by osmosis 
+Sate in a way no one is my age
+Profoundly carries around terrible short stories
+in a ridiculous bag 
+Ecstasy without philosophy
+Rigors of poor handwriting
+Here where nothing is spotted is invisible is toothy is teeth without mouth
+Mouth without axis
+James Caird without snowballs 
+Soft floas, intersecting at all angles 
+
+Joke wind 
+Under the water there are traps
+A perfect place for an accident
+She’ll be in the doorway 
+With her bumps
+There’ll be tonight’s combo
+incoherence of incoherence
+Dis sod
+Cooks sort the onions
+I’m don’t have a visitor, I’m visiting
+Facing in the direction of where I’m from
+because I can’t not do it
+My scree falls there
+Posing
+I’ve heard a singer I’d never admit
+Without dramatic use of color
+In the Renaissance bullshit 
+Manner speaking of a whiz kid
+Spoking
+Sweat from his slippery face rubs off
+What the word sordid means to me
+Nothing
+
+I see now the bench’s basis
+Frond turbulence
+A grocer’s grave cracks quickly 
+Ambiguous crumpled suicide
+Only opening her mouth to eat 
+I saw on this ash for kneeling purposes
+Dozing?
+Beer here with character
+General cantanker
+Practically stumble there 
+I guess the thrill besides lights out is rowing smooth wakes
+Which I never did on my own dime before
+But as a cousin to it’s benchmarks, can do
+The darndest robots are destroyed
+Tinia
+Elegant redoubts remain pondered
+Spite via violin buy
+This is just management
+Tell that one protect my fucking boots from him
+Killing my money like this, at a bar
+Nonetheless the baker’s dozen stills the heart
+A one too many host 
+First one was in Cloverdale
+Was plus one then 
+Hair on the tongue stayed
+Free breadsticks
+
+Motion,
+Monkish if at all
+Broadens the decibel until its fake
+The chair smacks against the door
+With qualified thuds
+Keeping track
+No other fever since it’s October
+No whippoorwhils hatching
+Idiots dance with ID
+Prefer the sick
+Our hurry lands a note
+Cooperated
+Around the pivot of thirds
+Dunstable paired them so they went
+There together
+I see a bodkin
+Through which I must go
+I wish I had some concrete problem
+Other than the concrete 
+Stacked in here now
+This partita entering 
+Part way`,
+
+`Who’ll guess the manager’s 
+best guess? Your toucan
+this Willy
+or Baker
+or beaker of Crumlin eggs
+Their West obsession or East progamming
+Would charm the brightest,
+tartest, mostest boggles
+into flocking to the hearest, herest,
+kindest wiggles 
+you’d next to know
+
+Logjam in my pockets,
+Cheerless salads in my person
+This chugged appearance
+has the triumphant solitude
+I positioned it to——
+I selled off this piece of highway detritus
+Once I turned threeteen
+My Ticonderoga left over to 
+run this ran line 
+Mildly into the lake
+
+Port of portions`,
+
+`As at Martin’s 
+Jack Schaeffer’s basin
+Poured chump cheese into “Hey Old Lady”
+The gnat’s get 
+
+This owl hoots 
+so much
+it sounds like Hoat
+
+Did I do this shiv on Hoy’s cay
+or was it Parkersburg..
+
+Buxton rope we could use to sc…
+
+Has fascinated to observe merit
+Does but I didn’t had a war to set a place
+
+Ulstory the ur-allowed
+Boring brim
+Olfactorily 
+
+Dolt set! The 
+d
+replete Of
+
+If you're already famous and you didn't fuck up that bad—sort of Jason Manford sexting level—you'll probably get away with it. However, if you're already famous but you fucked up terribly—let's say, Seinfeld's Michael Richards' horrible rant—your career will be defined by that moment for the rest of your life. Sadly, if you weren't very famous before, then it doesn't matter how badly you fucked up. This is you now. You will never work in entertainment again, honey. 
+
+I will title this tantalyzing pursuit 
+of that which matters as bright thought
+with my Douglas on hand and Smithy
+The Gabled Day Glen and Bros.
+Marked light on the sauce and doubled
+with a slight variation on toupee as touprac
+the Cheerfull Render (Stet-Shanahan) of 
+fork falling on transparent glass plate dept 
+of thought, writing sprucely on a silk sheets
+Prone buckle, that might the chose of wine,
+be put casually down there as I do it…
+Let me st
+
+Ten cent beer night
+
+Spluplefactions
+Lear: See how it goes
+Cordelia: O`,
+
+`Yow! I broke my booder
+Just a little trickster kiddo
+Writ large? Kidlanding is beachy 
+like a doyfriend
+Filial piety rumpers
+But like the dead I suck butt
+from the coffins
+Though those fuckers are gruey
+I have tongued baskin-robbins
+Softy, largely bored 
+But I bumpled parochial schoolmarms
+with the cadilack I ownedled
+Needling the lightswitchs
+with my paper moony
+Dropkicked gite
+Pushed back in Cockburn’s
+Flubby changerooes
+But last in line for tummies
+Bumped into me first
+so I clocked him right there
+Blurting out what comes to me`,
+
+`Tore through things like a bear trying to sit
+Framelicking was the pastime in Katy
+or it was clucking in bed
+The greatest working education out there
+for a free death conk
+Was that if I had the three dollars you were?
+Could you have seen that council ply 
+You’d have given any tie
+Ox coached into gameplay 
+although the couch is leaking its surface
+
+Jack Schaeffer’s basin
+Poured planets into`,
+
+`But of this means their
+No doubt this was true
+Even such would quality their portrait
+But their ends is the same, Bucky
+
+There was no them l said
+like in the article
+People is plural 
+unless he had this planned
+the SUV was driven by another
+Why do you think he acted alone?
+He stabbed someone alone,
+why couldn’t he escape alone dumbass
+
+Now this thing in my eyes
+has a suture
+But by adjoining is joined
+to the revolutionary lame os
+who say “of” but don’t do “of”
+to corpses`,
+
+`You couldn’t inter-Meet the Press
+If you tried lockpicking at age 21
+using your reasonable thimble facsimile
+
+If there were any of their chronos
+that were as decompletely as mine
+I’d be a winner of a blue jeans’ say`,
+
+`Lay out beside any flunkie
+And thin all of your doings
+The best opt you ever could 
+Must have the slowest mere scan in
+
+To make or break the policy
+To which all bastards aspire 
+Blames gloat play on winners
+While also plucking their sloat
+
+Grimace all you want because
+Bare or Bruns' facts don't change
+Aspirate in North Dakota sometime -
+Bearances allowed you will chitter
+
+My friends along the South Platte 
+With any honest days work said
+Would've rebuilt my barn already
+Spare of any oat expense outlived
+
+If I had no pockets
+And no pockets
+But the Y in my jeans
+That rouge in there will be 
+Leered at with faxes
+
+And no Marie will portraiture
+My side of my back 
+That from any substation there
+Would be a view of a procedure
+Or of a questionnaire 
+
+Even if anyone were my aunt
+On my fathers brothers side
+Or at, 
+A the best cantanker around
+Would a be in the Rowland's home 
+On my amount of drinks drunk
+
+Wool only meant that day by me
+But I had the poor fractions of me
+As well, the top of my head was too
+And waited for inexcusable 
+Dividuals
+
+Tractor Poem
+
+Last fear said set out on 
+Was the tractors deep breath
+In this part of a summer night
+Aghaghapff
+And from its emblazoned duct
+Rhapsodized or rheumatically
+Spoken to my inner rooms 
+It emote Hurry`
   ]
 }
 

@@ -96,7 +96,135 @@ They broke their backs lifting Moloch to Heaven! Pavements, trees, radios, tons!
 Visions! omens! hallucinations! miracles! ecstasies! gone down the American river!
 Dreams! adorations! illuminations! religions! the whole boatload of sensitive bullshit!
 Breakthroughs! over the river! flips and crucifixions! gone down the flood! Highs! Epiphanies! Despairs! Ten years’ animal screams and suicides! Minds! New loves! Mad generation! down on the rocks of Time!
-Real holy laughter in the river! They saw it all! the wild eyes! the holy yells! They bade farewell! They jumped off the roof! to solitude! waving! carrying flowers! Down to the river! into the street!`
+Real holy laughter in the river! They saw it all! the wild eyes! the holy yells! They bade farewell! They jumped off the roof! to solitude! waving! carrying flowers! Down to the river! into the street!`,
+
+`America I’ve given you all and now I’m nothing.
+America two dollars and twentyseven cents January 17, 1956.   
+I can’t stand my own mind.
+America when will we end the human war?
+Go fuck yourself with your atom bomb.
+I don’t feel good don’t bother me.
+I won’t write my poem till I’m in my right mind.
+America when will you be angelic?
+When will you take off your clothes?
+When will you look at yourself through the grave?
+When will you be worthy of your million Trotskyites?
+America why are your libraries full of tears?
+America when will you send your eggs to India?
+I’m sick of your insane demands.
+When can I go into the supermarket and buy what I need with my good looks?
+America after all it is you and I who are perfect not the next world.   
+Your machinery is too much for me.
+You made me want to be a saint.
+There must be some other way to settle this argument.   
+Burroughs is in Tangiers I don’t think he’ll come back it’s sinister.   
+Are you being sinister or is this some form of practical joke?   
+I’m trying to come to the point.
+I refuse to give up my obsession.
+America stop pushing I know what I’m doing.
+America the plum blossoms are falling.
+I haven’t read the newspapers for months, everyday somebody goes on trial for murder.
+America I feel sentimental about the Wobblies.
+America I used to be a communist when I was a kid I’m not sorry.   
+I smoke marijuana every chance I get.
+I sit in my house for days on end and stare at the roses in the closet.   
+When I go to Chinatown I get drunk and never get laid.   
+My mind is made up there’s going to be trouble.
+You should have seen me reading Marx.
+My psychoanalyst thinks I’m perfectly right.
+I won’t say the Lord’s Prayer.
+I have mystical visions and cosmic vibrations.
+America I still haven’t told you what you did to Uncle Max after he came over from Russia.
+I’m addressing you.
+Are you going to let your emotional life be run by Time Magazine?   
+I’m obsessed by Time Magazine.
+I read it every week.
+Its cover stares at me every time I slink past the corner candystore.   
+I read it in the basement of the Berkeley Public Library.
+It’s always telling me about responsibility. Businessmen are serious. Movie producers are serious. Everybody’s serious but me.   
+It occurs to me that I am America.
+I am talking to myself again.
+
+Asia is rising against me.
+I haven’t got a chinaman’s chance.
+I’d better consider my national resources.
+My national resources consist of two joints of marijuana millions of genitals an unpublishable private literature that jetplanes 1400 miles an hour and twentyfive-thousand mental institutions.
+I say nothing about my prisons nor the millions of underprivileged who live in my flowerpots under the light of five hundred suns.
+I have abolished the whorehouses of France, Tangiers is the next to go.
+My ambition is to be President despite the fact that I’m a Catholic.
+
+America how can I write a holy litany in your silly mood?
+I will continue like Henry Ford my strophes are as individual as his automobiles more so they’re all different sexes.
+America I will sell you strophes $2500 apiece $500 down on your old strophe
+America free Tom Mooney
+America save the Spanish Loyalists
+America Sacco & Vanzetti must not die
+America I am the Scottsboro boys.
+America when I was seven momma took me to Communist Cell meetings they sold us garbanzos a handful per ticket a ticket costs a nickel and the speeches were free everybody was angelic and sentimental about the workers it was all so sincere you have no idea what a good thing the party was in 1835 Scott Nearing was a grand old man a real mensch Mother Bloor the Silk-strikers’ Ewig-Weibliche made me cry I once saw the Yiddish orator Israel Amter plain. Everybody must have been a spy.
+America you don’t really want to go to war.
+America its them bad Russians.
+Them Russians them Russians and them Chinamen. And them Russians.   
+The Russia wants to eat us alive. The Russia’s power mad. She wants to take our cars from out our garages.
+Her wants to grab Chicago. Her needs a Red Reader’s Digest. Her wants our auto plants in Siberia. Him big bureaucracy running our fillingstations.
+That no good. Ugh. Him make Indians learn read. Him need big black niggers. Hah. Her make us all work sixteen hours a day. Help.   
+America this is quite serious.
+America this is the impression I get from looking in the television set.   
+America is this correct?
+I’d better get right down to the job.
+It’s true I don’t want to join the Army or turn lathes in precision parts factories, I’m nearsighted and psychopathic anyway.
+America I’m putting my queer shoulder to the wheel.`,
+
+`If I were doing my Laundry I’d wash my dirty Iran
+I’d throw in my United States, and pour on the Ivory Soap, scrub up Africa, put all the birds and elephants back in the jungle,
+I’d wash the Amazon river and clean the oily Carib & Gulf of Mexico,   
+Rub that smog off the North Pole, wipe up all the pipelines in Alaska,   
+Rub a dub dub for Rocky Flats and Los Alamos, Flush that sparkly Cesium out of Love Canal
+Rinse down the Acid Rain over the Parthenon & Sphinx, Drain Sludge out of the Mediterranean basin & make it azure again,
+Put some blueing back into the sky over the Rhine, bleach the little Clouds so snow return white as snow,
+Cleanse the Hudson Thames & Neckar, Drain the Suds out of Lake Erie   
+Then I’d throw big Asia in one giant Load & wash out the blood & Agent Orange,
+Dump the whole mess of Russia and China in the wringer, squeeze out the tattletail Gray of U.S. Central American police state,
+& put the planet in the drier & let it sit 20 minutes or an Aeon till it came out clean.`,
+
+`Tonite I walked out of my red apartment door on East tenth street’s dusk—
+Walked out of my home ten years, walked out in my honking neighborhood
+Tonite at seven walked out past garbage cans chained to concrete anchors   
+Walked under black painted fire escapes, giant castiron plate covering a hole in ground
+—Crossed the street, traffic lite red, thirteen bus roaring by liquor store,   
+past corner pharmacy iron grated, past Coca Cola & Mylai posters fading scraped on brick
+Past Chinese Laundry wood door’d, & broken cement stoop steps For Rent hall painted green & purple Puerto Rican style
+Along E. 10th’s glass splattered pavement, kid blacks & Spanish oiled hair adolescents’ crowded house fronts—
+Ah, tonite I walked out on my block NY City under humid summer sky Halloween,
+thinking what happened Timothy Leary joining brain police for a season?   
+thinking what’s all this Weathermen, secrecy & selfrighteousness beyond reason—F.B.I. plots?
+Walked past a taxicab controlling the bottle strewn curb—
+past young fellows with their umbrella handles & canes leaning against a ravaged Buick
+—and as I looked at the crowd of kids on the stoop—a boy stepped up, put his arm around my neck
+tenderly I thought for a moment, squeezed harder, his umbrella handle against my skull,
+and his friends took my arm, a young brown companion tripped his foot ’gainst my ankle—
+as I went down shouting Om Ah Hūm to gangs of lovers on the stoop watching
+slowly appreciating, why this is a raid, these strangers mean strange business
+with what—my pockets, bald head, broken-healed-bone leg, my softshoes, my heart—
+Have they knives? Om Ah Hūm—Have they sharp metal wood to shove in eye ear ass? Om Ah Hūm
+& slowly reclined on the pavement, struggling to keep my woolen bag of poetry address calendar & Leary-lawyer notes hung from my shoulder
+dragged in my neat orlon shirt over the crossbar of a broken metal door   
+dragged slowly onto the fire-soiled floor an abandoned store, laundry candy counter 1929—
+now a mess of papers & pillows & plastic car seat covers cracked cockroach-corpsed ground—
+my wallet back pocket passed over the iron foot step guard
+and fell out, stole by God Muggers’ lost fingers, Strange—
+Couldn’t tell—snakeskin wallet actually plastic, 70 dollars my bank money for a week,
+old broken wallet—and dreary plastic contents—Amex card & Manf. Hanover Trust Credit too—business card from Mr. Spears British Home Minister Drug Squad—my draft card—membership ACLU & Naropa Institute Instructor’s identification
+Om Ah Hūm   I continued chanting Om Ah Hūm
+Putting my palm on the neck of an 18 year old boy fingering my back pocket crying “Where’s the money”
+“Om Ah Hūm    there isn’t any”
+My card Chief Boo-Hoo Neo American Church New Jersey & Lower East Side
+Om Ah Hūm    —what not forgotten crowded wallet—Mobil Credit, Shell? old lovers addresses on cardboard pieces, booksellers calling cards—
+—“Shut up or we’ll murder you”—“Om Ah Hūm    take it easy”
+Lying on the floor shall I shout more loud?—the metal door closed on blackness
+one boy felt my broken healed ankle, looking for hundred dollar bills behind my stocking weren’t even there—a third boy untied my Seiko Hong Kong watch rough from right wrist leaving a clasp-prick skin tiny bruise
+“Shut up and we’ll get out of here”—and so they left,
+as I rose from the cardboard mattress thinking Om Ah Hūm    didn’t stop em enough,
+the tone of voice too loud—my shoulder bag with 10,000 dollars full of poetry left on the broken floor—`
 ]}
 
 module.exports = allenGinsberg

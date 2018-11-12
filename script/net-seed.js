@@ -4,39 +4,39 @@ const db = require('../server/db')
 const fs = require('fs')
 const { Net } = require('../server/db/models')
 const { thomas, ginsberg, spenser, snyder, ashbery, fabbro, auden, shakespeare } = require('./training/data')
-const {tokenizeString, shuffle} = require('./training/new-approach')
+const {tokenizeString, shuffle, filterAuthor } = require('./training/new-approach')
 
 const firstHundredAuthors = [
   {
-    input: (tokenizeString(thomas.data.join(' '))).slice(0, 30),
+    input: (tokenizeString(filterAuthor(thomas, 0.5, 0.5).data.join(' '))).slice(0, 30),
     output: '1'
   },
   {
-    input: (tokenizeString(ginsberg.data.join(' '))).slice(0, 30),
+    input: (tokenizeString(filterAuthor(ginsberg, 0.5, 0.5).data.join(' '))).slice(0, 30),
     output: '2'
   },
   {
-    input: (tokenizeString(spenser.data.join(' '))).slice(0, 30),
+    input: (tokenizeString(filterAutho(spenser, 0.5, 0.5).data.join(' '))).slice(0, 30),
     output: '3'
   },
   {
-    input: (tokenizeString(snyder.data.join(' '))).slice(0, 30),
+    input: (tokenizeString(filterAuthor(snyder, 0.5, 0.5).data.join(' '))).slice(0, 30),
     output: '4'
   },
   {
-    input: (tokenizeString(ashbery.data.join(' '))).slice(0, 30),
+    input: (tokenizeString(filterAuthor(ashbery, 0.5, 0.5).data.join(' '))).slice(0, 30),
     output: '5'
   },
   {
-    input: (tokenizeString(fabbro.data.join(' '))).slice(0, 30),
+    input: (tokenizeString(filterAuthor(fabbro, 0.5, 0.5).data.join(' '))).slice(0, 30),
     output: '6'
   },
   {
-    input: (tokenizeString(auden.data.join(' '))).slice(0, 30),
+    input: (tokenizeString(filterAuthor(auden, 0.5, 0.5).data.join(' '))).slice(0, 30),
     output: '7'
   },
   {
-    input: (tokenizeString(shakespeare.data.join(' '))).slice(0, 30),
+    input: (tokenizeString(filterAuthor(shakespeare, 0.5, 0.5).data.join(' '))).slice(0, 30),
     output: '8'
   }
 ]

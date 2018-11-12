@@ -1,5 +1,6 @@
 const punctuationRegEx = /[,\.;—\-\?!]/g
 const returnRegEx = /[\r\n]/g
+const onlyWordsRegEx = /[^a-zA-Z’ ]/g
 const commonWords = ['the','be','of','and','a','to','in','he','have','it','that','for','they','I','with',
 'as','not','on','she','at','by','this','we','you','do','but','from','or','which','one','would','all',
 'will','there','say','who','make','when','can','more','if','no','man','out','other','so','what','time',
@@ -40,5 +41,28 @@ export const filterCommonWords = (results, percentage) => results.filter(res => 
   // console.log('filtering with a slice of ', wordPortion)
   return !wordPortion.includes(res)
 })
+
+function filterCommonWordsStr(str, commonPercent, filterPercent) { // <= 1
+  const wordPortion = commonWords.slice(0, Math.floor(commonWords.length * commonPercent))
+  const splitStr = tokenizeString(str)
+  return splitStr.filter(word => {
+    return !(commonWords.includes(word) && Math.random() <= filterPercent)
+  })
+  return splitStr.join(' ')
+}
+
+function tokenizeString(str) {
+  //fix this dumb double-replace
+  return str.toLowerCase()
+    .replace(onlyWordsRegEx, ' ')
+    .split(' ')
+    .filter(t => t)
+}
+
+export const filterAuthor = (author, commonPercent, filterPercent) => {
+  let authorCopy = {...author}
+  authorCopy.data.forEach(poem => poem = filterCommonWordsStr(poem, commonPercent, filterPercent))
+  return authorCopy
+}
 
 export const curryFilter = (filter, percentage) => (results) => filter(results, percentage)

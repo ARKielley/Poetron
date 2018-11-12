@@ -66,6 +66,10 @@ export const selectAuthor = (value) => (dispatch) => {
   dispatch(changeAuthor(value))
 }
 
+export const makeAuthorAll = () => (dispatch) => {
+  dispatch(changeAuthor('all'))
+}
+
 export const handleCheck = (option, setting) => (dispatch) => {
   dispatch(changeAuto())
 }

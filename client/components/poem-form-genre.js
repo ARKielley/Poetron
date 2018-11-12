@@ -1,8 +1,8 @@
 import React from 'react'
 import { connect } from 'react-redux'
 import { sanitizeName, stylizeName } from '../util'
-import { changeSpecifiedOption, selectGenre } from '../store/options'
-import { getLookupFromServer } from '../store/suggestion'
+import { changeSpecifiedOption, selectGenre, makeAuthorAll } from '../store/options'
+import { getLookupFromServer, getFilteredSuggestions, pickSuggestion } from '../store/suggestion'
 
 let lowerCaseTitle
 
@@ -27,7 +27,9 @@ const mapDispatch = (dispatch) => ({
     dispatch(getLookupFromServer(value))
   },
   changeGenre(value) {
+    dispatch(makeAuthorAll())
     dispatch(selectGenre(value))
+    dispatch(getLookupFromServer(value))
   }
 })
 

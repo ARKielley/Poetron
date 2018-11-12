@@ -150,7 +150,54 @@ And let that pine to aggravate thy store;
 Buy terms divine in selling hours of dross;
 Within be fed, without be rich no more:
    So shall thou feed on Death, that feeds on men,
-   And Death once dead, there's no more dying then.`
+   And Death once dead, there's no more dying then.`,
+
+`Those lips that Love's own hand did make,
+Breathed forth the sound that said 'I hate',
+To me that languished for her sake:
+But when she saw my woeful state,
+Straight in her heart did mercy come,
+Chiding that tongue that ever sweet,
+Was used in giving gentle doom:
+And taught it thus anew to greet:
+'I hate' she altered with an end,
+That followed it as gentle day,
+Doth follow night who like a fiend
+From heaven to hell is flown away.
+'I hate', from hate away she threw,
+And saved my life saying 'not you'.`,
+
+`Or whether doth my mind being crowned with you
+Drink up the monarch's plague this flattery?
+Or whether shall I say mine eye saith true,
+And that your love taught it this alchemy?
+To make of monsters, and things indigest,
+Such cherubins as your sweet self resemble,
+Creating every bad a perfect best
+As fast as objects to his beams assemble:
+O 'tis the first, 'tis flattery in my seeing,
+And my great mind most kingly drinks it up,
+Mine eye well knows what with his gust is 'greeing,
+And to his palate doth prepare the cup.
+If it be poisoned, 'tis the lesser sin,
+That mine eye loves it and doth first begin.`,
+
+`From you have I been absent in the spring,
+When proud-pied April (dressed in all his trim)
+Hath put a spirit of youth in every thing:
+That heavy Saturn laughed and leaped with him.
+Yet nor the lays of birds, nor the sweet smell
+Of different flowers in odour and in hue,
+Could make me any summer's story tell:
+Or from their proud lap pluck them where they grew:
+Nor did I wonder at the lily's white,
+Nor praise the deep vermilion in the rose,
+They were but sweet, but figures of delight:
+Drawn after you, you pattern of all those.
+Yet seemed it winter still, and you away,
+As with your shadow I with these did play.`,
+
+``
 ]}
 
 module.exports = williamShakespeare

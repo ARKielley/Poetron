@@ -1,39 +1,39 @@
 import axios from 'axios'
 import brain from 'brain.js'
-import { tokenizeString, filterCommonWords,  categoryTree, shuffle } from '../util'
+import { tokenizeString, filterCommonWords,  categoryTree, shuffle, filterAuthor } from '../util'
 const { thomas, ginsberg, spenser, snyder, ashbery, fabbro, auden, shakespeare } = require('../../script/training/data')
 
   const firstHundredAuthors = [
     {
-      input: (tokenizeString(shuffle(thomas.data).join(' '))).slice(0, 30),
+      input: (tokenizeString(shuffle(filterAuthor(thomas, 0.5, 0.5).data).join(' '))).slice(0, 100),
       output: '1'
     },
     {
-      input: (tokenizeString(shuffle(ginsberg.data).join(' '))).slice(0, 30),
+      input: (tokenizeString(shuffle(filterAuthor(ginsberg, 0.5, 0.5).data).join(' '))).slice(0, 100),
       output: '2'
     },
     {
-      input: (tokenizeString(shuffle(spenser.data).join(' '))).slice(0, 30),
+      input: (tokenizeString(shuffle(filterAuthor(spenser, 0.5, 0.5).data).join(' '))).slice(0, 100),
       output: '3'
     },
     {
-      input: (tokenizeString(shuffle(snyder.data).join(' '))).slice(0, 30),
+      input: (tokenizeString(shuffle(filterAuthor(snyder, 0.5, 0.5).data).join(' '))).slice(0, 100),
       output: '4'
     },
     {
-      input: (tokenizeString(shuffle(ashbery.data).join(' '))).slice(0, 30),
+      input: (tokenizeString(shuffle(filterAuthor(ashbery, 0.5, 0.5).data).join(' '))).slice(0, 100),
       output: '5'
     },
     {
-      input: (tokenizeString(shuffle(fabbro.data).join(' '))).slice(0, 30),
+      input: (tokenizeString(shuffle(filterAuthor(fabbro, 0.5, 0.5).data).join(' '))).slice(0, 100),
       output: '6'
     },
     {
-      input: (tokenizeString(shuffle(auden.data).join(' '))).slice(0, 30),
+      input: (tokenizeString(shuffle(filterAuthor(auden, 0.5, 0.5).data).join(' '))).slice(0, 100),
       output: '7'
     },
     {
-      input: (tokenizeString(shuffle(shakespeare.data).join(' '))).slice(0, 30),
+      input: (tokenizeString(shuffle(filterAuthor(shakespeare, 0.5, 0.5).data).join(' '))).slice(0, 100),
       output: '8'
     }
   ]
