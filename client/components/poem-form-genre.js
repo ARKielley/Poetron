@@ -12,13 +12,17 @@ const PoemFormGenre = (props) => {
   return (
     <div id={`${lowerCaseTitle}-container`}>
       <label for={lowerCaseTitle}>{title}</label>
-      <select id={lowerCaseTitle} name={title} value={props.value} onChange={(event) => props.changeGenre(event.target.value)}>
+      <select id={lowerCaseTitle} name={title} value={props.value} disabled={props.autoDisabled} onChange={(event) => props.changeGenre(event.target.value)}>
         <option value='all'>All</option>
         {names && names.map(name => <option value={name}>{stylizeName(name)}</option>)}
       </select>
     </div>
   )
 }
+
+const mapState = (state) => ({
+  autoDisabled: state.optionsReducer.auto
+})
 
 const mapDispatch = (dispatch) => ({
   changeOption(value) {
@@ -33,4 +37,4 @@ const mapDispatch = (dispatch) => ({
   }
 })
 
-export default connect(null, mapDispatch)(PoemFormGenre)
+export default connect(mapState, mapDispatch)(PoemFormGenre)

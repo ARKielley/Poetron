@@ -3,7 +3,7 @@ import brain from 'brain.js'
 import { tokenizeString, filterCommonWords,  categoryTree, shuffle, filterAuthor } from '../util'
 const { thomas, ginsberg, spenser, snyder, ashbery, fabbro, auden, shakespeare } = require('../../script/training/data')
 
-const sliceSize = 100;
+const sliceSize = 10;
 
   const firstHundredAuthors = [
     {
