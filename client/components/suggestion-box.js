@@ -33,7 +33,7 @@ class SuggestionBox extends Component {
 
   render() {
     const opacity = this.state.open ? 1 : 0.75
-    const backgroundColor = this.state.open ? 'rgba(245,245,245,0.65)' : 'transparent'
+    const backgroundColor = this.state.open ? 'rgba(250,250,250,0.85)' : 'transparent'
     const borderColor = this.state.open ? '#B5342F' : 'transparent'
     const currentSuggestion = this.props.suggestions[this.props.suggestionIndex]
     return (

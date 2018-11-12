@@ -9,6 +9,8 @@ export {Login, Signup} from './auth-form'
 export {default as WritePoem} from './write-poem'
 export {default as PoemForm} from './poem-form'
 export {default as PoemFormDropdown} from './poem-form-dropdown'
+
+export {default as PoemFormGenre} from './poem-form-genre'
 export {default as PoemFormSearch} from './poem-form-search'
 export {default as SuggestionBox} from './suggestion-box'
 export {default as PoemInput} from './poem-input'

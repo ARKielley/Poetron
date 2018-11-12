@@ -1,8 +1,9 @@
 import React, { Component } from 'react'
 import { connect } from 'react-redux';
 // import CaretCoordinates from 'textarea-caret-position'
-import { PoemFormDropdown, PoemFormSearch, PoemInput, FilterBox } from './index'
+import { PoemFormDropdown, PoemFormGenre, PoemInput, FilterBox } from './index'
 import { changeSpecifiedValue, toggleAuto, getInfoFromServer } from '../store/options'
+import { createNet } from '../store/detection'
 import { getLookupFromServer, getFilteredSuggestions, pickSuggestion } from '../store/suggestion'
 import { getCaretCoordinates } from '../util'
 
@@ -23,6 +24,7 @@ class PoemForm extends Component {
 
   componentDidMount() {
     this.props.getInfoFromServer()
+    this.props.createNet()
   }
 
   changeFilter(target) {
@@ -45,13 +47,13 @@ class PoemForm extends Component {
     return (
       <div id='main-form-container'>
         <div id='parameter-bar-container' className='flex'>
-          <PoemFormDropdown title='Genre' value={this.props.genre} names={this.props.genres} />
-          <PoemFormDropdown title='Author' value={this.props.author} names={this.props.authors} />
-          <span>Filters</span><button onClick={this.toggleFilters}>
+          <PoemFormGenre key='1' title='Genre' value={this.props.genre} names={this.props.genres} /> <br />
+          <PoemFormDropdown key='2' title='Author' value={this.props.author} names={this.props.authors} />
+          {/*<span>Filters</span><button onClick={this.toggleFilters}>
             {this.state.filtersOpen ? '-' : '+'}
           </button>
           {this.state.filtersOpen && <FilterBox changeFilter={this.changeFilter} 
-            values={this.state.filters} />}
+          values={this.state.filters} />}*/}
         </div>
         <PoemInput filters={this.state.filters} />
       </div>
@@ -68,6 +70,9 @@ const mapDispatch = (dispatch) => ({
   },
   getInfoFromServer() {
     dispatch(getInfoFromServer())
+  },
+  createNet() {
+    dispatch(createNet())
   }
 })
 

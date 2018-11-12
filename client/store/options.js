@@ -10,6 +10,8 @@ const GET_INFO = 'GET_INFO'
 // const CHANGE_POET = 'CHANGE_POET'
 // const CHANGE_EMOTIONS = 'CHANGE_EMOTIONS'
 const CHANGE_VALUE = 'CHANGE_VALUE'
+const CHANGE_GENRE = 'CHANGE_GENRE'
+const CHANGE_AUTHOR = 'CHANGE_AUTHOR'
 const CHANGE_AUTO = 'CHANGE_AUTO'
 
 /**
@@ -32,6 +34,8 @@ const getInfo = (authors, genres) => ({type: GET_INFO, authors, genres})
 // const changeLineLength = (length) => ({type: CHANGE_LINE_LENGTH, length})
 // const changeStrictness = (stictness) => ({type: CHANGE_STRICTNESS, strictness})
 const changeValue = (option, value) => ({type: CHANGE_VALUE, option, value})
+const changeGenre = (value) => ({type: CHANGE_GENRE, value})
+const changeAuthor = (value) => ({type: CHANGE_AUTHOR, value})
 const changeAuto = () => ({type: CHANGE_AUTO})
 
 /**
@@ -39,16 +43,30 @@ const changeAuto = () => ({type: CHANGE_AUTO})
  */
 
 export const getInfoFromServer = () => async (dispatch) => {
-  const allAuthors = await axios.get('/api/lookups/authors')
-    .map(entry => entry.category)
-  const allGenres = await axios.get('/api/lookups/genres')
-  .map(entry => entry.category)
-  dispatch(getInfo(allAuthors, allGenres))
+  try {
+    let allAuthors = await axios.get('/api/lookups/authors')
+    let authorData = allAuthors.data.map(entry => entry.category)
+    let allGenres = await axios.get('/api/lookups/genres')
+    let genreData = allGenres.data.map(entry => entry.category)
+    dispatch(getInfo(authorData, genreData))
+  } catch (err) {
+    console.error(err)
+  }
 }
 
 export const changeSpecifiedOption = (option, value) => (dispatch) => {
+  console.log('CHANGING OPTION ', option, 'WITH VALUE ', value)
   dispatch(changeValue(option, value))
 }
+
+export const selectGenre = (value) => (dispatch) => {
+  dispatch(changeGenre(value))
+}
+
+export const selectAuthor = (value) => (dispatch) => {
+  dispatch(changeAuthor(value))
+}
+
 export const toggleAuto = (option, setting) => (dispatch) => {
   dispatch(changeAuto())
 }
@@ -62,7 +80,11 @@ export default function(state = defaultState, action) {
       return {...state, authors: action.authors, genres: action.genres}
     case CHANGE_VALUE:
       return {...state, [action.option]: action.value}
-      case CHANGE_AUTO:
+    case CHANGE_GENRE:
+      return {...state, genre: action.value}
+    case CHANGE_AUTHOR:
+      return {...state, author: action.value}
+    case CHANGE_AUTO:
       return {...state, auto: !auto}
     default:
       return state

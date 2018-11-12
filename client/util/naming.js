@@ -16,3 +16,9 @@ export const tokenizeString = (str) => {
     .split(' ')
     .filter(t => t)
 }
+
+export const authorLookup = [null, 
+  'thomas-delahaye', 'allen-ginsberg', 
+  'edmund-spenser', 'gary-snyder', 
+  'john-ashbery', 'miglior fabbro',
+  'w-h-auden', 'william-shakespeare']

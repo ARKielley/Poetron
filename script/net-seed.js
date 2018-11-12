@@ -4,40 +4,39 @@ const db = require('../server/db')
 const fs = require('fs')
 const { Net } = require('../server/db/models')
 const { thomas, ginsberg, spenser, snyder, ashbery, fabbro, auden, shakespeare } = require('./training/data')
-const {tokenizeString} = require('./training/new-approach')
-const {shuffle} = require('./new-approach')
+const {tokenizeString, shuffle} = require('./training/new-approach')
 
 const firstHundredAuthors = [
   {
-    input: (tokenizeString(thomas.data.join(' '))).slice(0, 100),
+    input: (tokenizeString(thomas.data.join(' '))).slice(0, 30),
     output: '1'
   },
   {
-    input: (tokenizeString(ginsberg.data.join(' '))).slice(0, 100),
+    input: (tokenizeString(ginsberg.data.join(' '))).slice(0, 30),
     output: '2'
   },
   {
-    input: (tokenizeString(spenser.data.join(' '))).slice(0, 100),
+    input: (tokenizeString(spenser.data.join(' '))).slice(0, 30),
     output: '3'
   },
   {
-    input: (tokenizeString(snyder.data.join(' '))).slice(0, 100),
+    input: (tokenizeString(snyder.data.join(' '))).slice(0, 30),
     output: '4'
   },
   {
-    input: (tokenizeString(ashbery.data.join(' '))).slice(0, 100),
+    input: (tokenizeString(ashbery.data.join(' '))).slice(0, 30),
     output: '5'
   },
   {
-    input: (tokenizeString(fabbro.data.join(' '))).slice(0, 100),
+    input: (tokenizeString(fabbro.data.join(' '))).slice(0, 30),
     output: '6'
   },
   {
-    input: (tokenizeString(auden.data.join(' '))).slice(0, 100),
+    input: (tokenizeString(auden.data.join(' '))).slice(0, 30),
     output: '7'
   },
   {
-    input: (tokenizeString(shakespeare.data.join(' '))).slice(0, 100),
+    input: (tokenizeString(shakespeare.data.join(' '))).slice(0, 30),
     output: '8'
   }
 ]
@@ -48,7 +47,7 @@ let net = new brain.recurrent.LSTM()
 
 net.train(firstHundredAuthors, {
   // Defaults values --> expected validation
-iterations: 400,    // the maximum times to iterate the training data --> number greater than 0
+iterations: 200,    // the maximum times to iterate the training data --> number greater than 0
 errorThresh: 0.005,   // the acceptable error percentage from training data --> number between 0 and 1
 log: true,           // true to use console.log, when a function is supplied it is used --> Either true or a function
 logPeriod: 20,        // iterations between logging out --> number greater than 0
@@ -63,10 +62,10 @@ async function seed() {
   await db.sync()
   console.log('db synced!')
 
-  const testFunc = net.toFunction().toString()
+  const testFunc = JSON.stringify(net.toJSON())
   const fullText = `module.exports = ${testFunc}`
   // console.log(testFunc(['a']))
-  fs.writeFile('genre-net-function.js', fullText, function (err) {
+  fs.writeFile('test-net-function.txt', fullText, function (err) {
     if (err) throw err;
     console.log('Saved!');
   });

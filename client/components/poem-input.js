@@ -2,9 +2,9 @@ import React, { Component } from 'react'
 import { connect } from 'react-redux'
 import { SuggestionBox } from './index'
 import { getLookupFromServer, getFilteredSuggestions } from '../store/suggestion'
-import { detectUserStyle } from '../store/detection'
-import { getCaretCoordinates, lastElem } from '../util'
-import { TrainStream } from '../../node_modules/brain.js';
+// import { detectUserStyle, detectBackEnd } from '../store/detection'
+import {selectAuthor} from '../store/options'
+import { getCaretCoordinates, lastElem, tokenizeString, authorLookup } from '../util'
 
 const punctuationRegEx = /[\s,\.;—\-\/]/g
 const breakRegEx = /[\s —\/]/g
@@ -24,7 +24,7 @@ class PoemInput extends Component {
   componentDidMount() {
     this.box.focus()
     this.setCoords()
-    this.props.getLookup('thomas-delahaye')
+    this.props.getLookup('all')
   }
 
   setCoords(extra, newState = {}) {
@@ -36,11 +36,7 @@ class PoemInput extends Component {
     console.log('HANDLING CHANGE')
     const { lookup, filters } = this.props
     console.log('LOOKUP IN INPUT: ', lookup)
-    // const coords = getCaretCoordinates(this.box, this.box.selectionEnd)
-    // this.setState({
-    //   coords,
-    //   text: event.target.value
-    // })
+
     this.setCoords('', {text: event.target.value})
     const lastWord = this.state.text ? 
       lastElem(this.state.text.split(punctuationRegEx).filter(v => v))
@@ -50,16 +46,20 @@ class PoemInput extends Component {
     // if (lookbackIndex > allPrevText.length - 2) lookbackIndex = 0
     // const limitedPrevText = allPrevText.slice(lookbackIndex, allPrevText.length - 1)
     //train into dynamic net?
-    if (punctuationRegEx.test(lastElem(event.target.value))) {
+    // if (punctuationRegEx.test(lastElem(event.target.value))) {
       this.props.getSuggestions(lookup, lastWord, filters)
-    }
+      // this.props.detectStyle(this.state.text)
+      const authorNum = this.props.net.run(tokenizeString(this.state.text)).match(/\d/)[0]
+      const detectedAuthor = authorLookup[authorNum]
+      if (detectedAuthor) this.props.updateAuthor(detectedAuthor)
+    // }
   }
 
   add(input) {
     const { text } = this.state
-    console.log(text[this.box.selectionEnd - 1])
+    // console.log(text[this.box.selectionEnd - 1])
     if (!breakRegEx.test(text[this.box.selectionEnd - 1])) input = ' ' + input
-    if (text[this.box.selectionEnd] && !punctuationRegEx.test(text[this.box.selectionEnd])) input += ' '
+    // if (!punctuationRegEx.test(text[this.box.selectionEnd])) input += ' '
     const newText = text.substring(0, this.box.selectionEnd) 
       + input 
       + text.substring(this.box.selectionEnd)
@@ -75,13 +75,13 @@ class PoemInput extends Component {
       <div id='entry-container'>
         <textarea  
           value={this.state.text} 
-          rows='32' cols='96' 
+          rows='20' cols='56' 
           ref={(textarea) => this.box = textarea}
           onClick={() => this.setCoords()}
           onChange={this.handleChange} />
         <SuggestionBox filters={this.props.filters} 
           add={this.add} 
-          style={{position: 'absolute', top: `${this.state.coords.top + 176}px`, left: `${this.state.coords.left + 22}px`}} />
+          style={{position: 'absolute', top: `${this.state.coords.top + 176}px`, left: `${this.state.coords.left + 42}px`}} />
        </div>
     )
   }
@@ -89,13 +89,14 @@ class PoemInput extends Component {
 
 const mapState = (state) => ({ 
   lookup: state.suggestionReducer.lookup,
-
+  net: state.detectionReducer.net
 })
 
 const mapDispatch = (dispatch) => ({
   getLookup: (options) => dispatch(getLookupFromServer(options)),
   getSuggestions: (lookup, input, filters) => dispatch(getFilteredSuggestions(lookup, input, filters)),
-  detectStyle: (input) => dispatch(detectUserStyle(input))
+  detectStyle: (input) => dispatch(detectUserStyle(input)),
+  updateAuthor: (author) => dispatch(selectAuthor(author))
 })
 
 export default connect(mapState, mapDispatch)(PoemInput)

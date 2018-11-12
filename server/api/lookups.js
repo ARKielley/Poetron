@@ -11,7 +11,7 @@ router.get('/', async (req, res, next) => {
   }
 })
 
-router.get('/names', async (req, res, next) => {
+router.get('/authors', async (req, res, next) => {
   try {
     const allNames = await Lookup.findAll(
       {where: {type: 'author'}},

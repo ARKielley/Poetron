@@ -37,7 +37,7 @@ export const filterReturns = (results, percentage) => results.filter(res => {
 })
 export const filterCommonWords = (results, percentage) => results.filter(res => {
   const wordPortion = commonWords.slice(0, Math.floor(commonWords.length * percentage))
-  console.log('filtering with a slice of ', wordPortion)
+  // console.log('filtering with a slice of ', wordPortion)
   return !wordPortion.includes(res)
 })
 

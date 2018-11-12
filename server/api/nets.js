@@ -1,6 +1,7 @@
 const router = require('express').Router()
 const { Net } = require('../db/models')
-const createNick = require('../../script/training/test.js')
+const tokenizeString = require('../../script/training/new-approach')
+// const authorNetFunction = require('../util/author-net-function')
 module.exports = router
 
 router.get('/', async (req, res, next) => {
@@ -12,6 +13,18 @@ router.get('/', async (req, res, next) => {
     next(err)
   }
 })
+
+router.post('/session', async (req, res, next) => {
+  req.session.net = req.body.net
+  res.send(net)
+})
+
+// router.post('/help', (req, res, next) => {
+
+//     const detectedIndex = authorNetFunction(tokenizeString(req.body.text)).match(/\n/)[0]
+//     res.send(detectedIndex)
+
+// })
 
 // router.post('/', async (req, res, next) => {
 //   try {

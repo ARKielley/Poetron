@@ -39,6 +39,7 @@ export const getLookupFromServer = (category) => async (dispatch) => {
   try {
     // const query = Object.keys(options).map(optKey => `${optKey}=${options[optKey]}`).join('&')
     const {data} = await axios.get(`/api/lookups/${category}`)
+    getFilteredSuggestions(data, 'the', [])
     dispatch(getNewLookup(data))
   } catch (err) {
     console.error(err)
@@ -51,14 +52,16 @@ export const getFilteredSuggestions = (lookup, input, filters = []) => async (di
     let results = lookup.data[input] || []
     // filters.forEach(fil => 
     for (let name in filters) {
-      results = filterBank[name](results, filters[name] / 100)
+      if (filters[name] > 0) results = filterBank[name](results, filters[name] / 100)
     }
     let categoryParent = categoryTree[lookup.category]
     while (results.length < 5 && categoryParent) {
       const {data} = await axios.get(`/api/lookups/${categoryParent}`)
+      console.log('PARENT: ', categoryParent)
       categoryParent = categoryTree[categoryParent]
-      const additionalResults = data[input]
-      filters.forEach(fil => additionalResults = fil(additionalResults))
+      let additionalResults
+      if (data) additionalResults = data[input]
+      if (Array.isArray(filters)) filters.forEach(fil => additionalResults = fil(additionalResults))
       results.concat(additionalResults)
     }
     dispatch(getSuggestions(shuffle(results).slice(0, 10)))

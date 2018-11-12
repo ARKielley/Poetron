@@ -57,7 +57,7 @@ function getAllIndices(arr, val) {
 
 function findSurroundingTokens(arr, token) { //ADD WIDTH OPTION?
   const idxArr = getAllIndices(arr, token)
-  return idxArr.map(idx => [arr[idx - 1], arr[idx + 1], arr[idx + 2]]
+  return idxArr.map(idx => [arr[idx + 1], arr[idx - 1], arr[idx + 2], arr[idx + 3], arr[idx + 4]]
       .filter((v, i, arr) => v))
     .reduce((total, current) => [...total, ...current])
 }
