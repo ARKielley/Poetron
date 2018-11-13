@@ -23,14 +23,6 @@ class SuggestionBox extends Component {
     this.props.pickSuggestion(suggestions, suggestionIndex)
   }
 
-  // getStyle() {
-  //   return {
-  //     ...this.props.style,
-  //     opacity: this.state.
-  //     backgroundColor: this.state.open ? '#eeeeee' : 'white'
-  //   }
-  // }
-
   render() {
     const opacity = this.state.open ? 1 : 0.75
     const backgroundColor = this.state.open ? 'rgba(250,250,250,0.85)' : 'transparent'
@@ -55,12 +47,11 @@ class SuggestionBox extends Component {
 
 const mapState = (state) => ({
   suggestions: state.suggestionReducer.suggestions,
-  suggestionIndex: state.suggestionReducer.suggestionIndex
+  suggestionIndex: state.suggestionReducer.suggestionIndex,
+  filters: state.optionsReducer.filters
 })
 
 const mapDispatch = (dispatch) => ({
-  // getNets: () => dispatch(getNetsFromServer(this.props.options)),
-  // getSuggestions: () => dispatch(getFilteredSuggestions(this.props.nets, this.props.input, this.props.filters)),
   pickSuggestion: (suggestions, index) => dispatch(pickSuggestion(suggestions, index))
 })
 

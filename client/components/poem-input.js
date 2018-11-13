@@ -24,7 +24,6 @@ class PoemInput extends Component {
   componentDidMount() {
     this.box.focus()
     this.setCoords()
-    this.props.getLookup('all')
   }
 
   setCoords(extra, newState = {}) {
@@ -99,7 +98,7 @@ const mapState = (state) => ({
 })
 
 const mapDispatch = (dispatch) => ({
-  getLookup: (options) => dispatch(getLookupFromServer(options)),
+  
   getSuggestions: (lookup, input, filters) => dispatch(getFilteredSuggestions(lookup, input, filters)),
   detectStyle: (input) => dispatch(detectUserStyle(input)),
   updateAuthor: (author) => dispatch(selectAuthor(author)),

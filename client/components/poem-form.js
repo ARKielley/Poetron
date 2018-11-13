@@ -22,9 +22,11 @@ class PoemForm extends Component {
     // this.toggleFilters = this.toggleFilters.bind(this)
   }
 
-  componentDidMount() {
+  async componentDidMount() {
+    // this.props.createNet()
     this.props.getInfoFromServer()
-    this.props.createNet()
+    await this.props.getLookup('all')
+    this.props.getSuggestions(this.props.lookup, '', this.state.filters)
   }
 
   changeFilter(target) {
@@ -61,22 +63,15 @@ class PoemForm extends Component {
   }
 }
 
-const mapState = (state) => ({...state.optionsReducer})
+const mapState = (state) => ({...state.optionsReducer, lookup: state.suggestionReducer.lookup})
 
 const mapDispatch = (dispatch) => ({
-  handleChangeValue(event) {
-    dispatch(changeSpecifiedValue(event.target.name, event.target.value))
-    //handleChangeAuto, look up what toggling dues
-  },
-  getInfoFromServer() {
-    dispatch(getInfoFromServer())
-  },
-  createNet() {
-    dispatch(createNet())
-  },
-  handleCheck() {
-    dispatch(handleCheck())
-  }
+  handleChangeValue: (event) => dispatch(changeSpecifiedValue(event.target.name, event.target.value)),
+  handleCheck: () => dispatch(handleCheck()),
+  getInfoFromServer: () => dispatch(getInfoFromServer()),
+  getLookup: (options) => dispatch(getLookupFromServer(options)),
+  getSuggestions: (lookup, input, filters) => dispatch(getFilteredSuggestions(lookup, input, filters)),
+  createNet: () => dispatch(createNet()),
 })
 
 export default connect(mapState, mapDispatch)(PoemForm)

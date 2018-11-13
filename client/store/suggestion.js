@@ -46,11 +46,15 @@ export const getLookupFromServer = (category) => async (dispatch) => {
   }
 }
 
-export const getFilteredSuggestions = (lookup, input, filters = []) => async (dispatch) => {
+export const getFilteredSuggestions = (lookup, input, filters = {}) => async (dispatch) => {
   try {
     console.log(lookup)
     let results = lookup.data[input] || []
-    // filters.forEach(fil => 
+    if (!results || !results.length) {
+      const allWords = Object.keys(lookup.data)
+      results = lookup.data[allWords[Math.floor(Math.random() * allWords.length)]] // results for random word in the lookup
+      console.log('results: ', results)
+    }
     for (let name in filters) {
       console.log(name)
       if (filters[name] > 0) results = filterBank[name](results, filters[name] / 100)
