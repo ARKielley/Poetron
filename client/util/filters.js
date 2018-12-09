@@ -36,11 +36,13 @@ export const filterPunctuation = (results, percentage) => results.filter(res => 
 export const filterReturns = (results, percentage) => results.filter(res => {
   if (Math.random() <= percentage) return !returnRegEx.test(res)
 })
-export const filterCommonWords = (results, percentage) => results.filter(res => {
-  const wordPortion = commonWords.slice(0, Math.floor(commonWords.length * percentage))
-  console.log('filtering with a slice of ', wordPortion)
-  return !wordPortion.includes(res)
-})
+export const filterCommonWords = (results, percentage) => {
+  return results.filter(res => {
+    const wordPortion = commonWords.slice(0, Math.floor(commonWords.length * percentage))
+    console.log('filtering with a slice of ', wordPortion)
+    return !wordPortion.includes(res)
+  })
+}
 
 function filterCommonWordsStr(str, commonPercent, filterPercent) { // <= 1
   const wordPortion = commonWords.slice(0, Math.floor(commonWords.length * commonPercent))

@@ -1,5 +1,6 @@
 export {sanitizeName, stylizeName, lastElem, dictionarizeString, tokenizeString, authorLookup} from './naming'
 export {default as getCaretCoordinates} from './test-caret'
+export {default as netWrapper} from './net-runner'
 export {filterCommonWords, curryFilter, shuffle, filterAuthor} from './filters'
 // export {default as AuthorNetFunction} from './author-net-function'
 export {categoryTree} from './trees'

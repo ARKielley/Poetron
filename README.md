@@ -10,4 +10,4 @@ The current dataset is also a bit lacking, but there is definitely room for expa
 
 ##IMPORTANT NOTE
 
-Right now the auto-detection net is created client-side because there is too much data to reload properly. I'm working on it. For now you'll have to wait 20 seconds for the net to train on a very limited dataset.
+Right now the auto-detection net is being (lightly) trained client-side because there is too much data to save and reload properly. I'm working on it. For now you'll have to wait a moment for the net to train on a very limited dataset.

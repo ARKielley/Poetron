@@ -4,7 +4,7 @@ import { SuggestionBox } from './index'
 import { getLookupFromServer, getFilteredSuggestions } from '../store/suggestion'
 // import { detectUserStyle, detectBackEnd } from '../store/detection'
 import {selectAuthor, selectGenre} from '../store/options'
-import { getCaretCoordinates, lastElem, tokenizeString, authorLookup, categoryTree } from '../util'
+import { getCaretCoordinates, lastElem, tokenizeString, authorLookup, categoryTree, netWrapper } from '../util'
 
 const punctuationRegEx = /[\s,\.;—\-\/]/g
 const breakRegEx = /[\s —\/]/g
@@ -49,7 +49,10 @@ class PoemInput extends Component {
       this.props.getSuggestions(lookup, lastWord, filters)
       // this.props.detectStyle(this.state.text)
       if (this.props.auto) {
-        const authorNum = this.props.net.run(tokenizeString(this.state.text)).match(/\d/)[0]
+        console.log(this.props.net)
+        const { characterTable, indexTable, characters, json } = this.props.net
+        // const authorNum = this.props.net(tokenizeString(this.state.text)).match(/\d/)[0]
+        const authorNum = netWrapper(characterTable, indexTable, characters, json)(tokenizeString(this.state.text)).match(/\d/)[0]
         const detectedAuthor = authorLookup[authorNum]
         if (detectedAuthor) {
           this.props.updateAuthor(detectedAuthor)

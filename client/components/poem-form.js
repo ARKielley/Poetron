@@ -3,10 +3,9 @@ import { connect } from 'react-redux';
 // import CaretCoordinates from 'textarea-caret-position'
 import { PoemFormDropdown, PoemFormGenre, PoemInput, FilterBox } from './index'
 import { changeSpecifiedValue, getInfoFromServer, handleCheck } from '../store/options'
-import { createNet } from '../store/detection'
+import { createNet, getNet } from '../store/detection'
 import { getLookupFromServer, getFilteredSuggestions, pickSuggestion } from '../store/suggestion'
 import { getCaretCoordinates } from '../util'
-import { throws } from 'assert';
 
 
 
@@ -23,10 +22,12 @@ class PoemForm extends Component {
   }
 
   async componentDidMount() {
-    // this.props.createNet()
+    // this.props.createNet(testMain)
+    this.props.getNet('smallAuthors')
     this.props.getInfoFromServer()
     await this.props.getLookup('all')
     this.props.getSuggestions(this.props.lookup, '', this.state.filters)
+    console.log('UPDATED AGAIN', this.props.net(['n']))
   }
 
   changeFilter(target) {
@@ -63,7 +64,7 @@ class PoemForm extends Component {
   }
 }
 
-const mapState = (state) => ({...state.optionsReducer, lookup: state.suggestionReducer.lookup})
+const mapState = (state) => ({...state.optionsReducer, lookup: state.suggestionReducer.lookup, net: state.detectionReducer.net})
 
 const mapDispatch = (dispatch) => ({
   handleChangeValue: (event) => dispatch(changeSpecifiedValue(event.target.name, event.target.value)),
@@ -71,7 +72,8 @@ const mapDispatch = (dispatch) => ({
   getInfoFromServer: () => dispatch(getInfoFromServer()),
   getLookup: (options) => dispatch(getLookupFromServer(options)),
   getSuggestions: (lookup, input, filters) => dispatch(getFilteredSuggestions(lookup, input, filters)),
-  createNet: () => dispatch(createNet()),
+  createNet: (net) => dispatch(createNet(net)),
+  getNet: (name) => dispatch(getNet(name))
 })
 
 export default connect(mapState, mapDispatch)(PoemForm)

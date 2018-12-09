@@ -3,7 +3,7 @@ import brain from 'brain.js'
 import { tokenizeString, filterCommonWords,  categoryTree, shuffle, filterAuthor } from '../util'
 const { thomas, ginsberg, spenser, snyder, ashbery, fabbro, auden, shakespeare } = require('../../script/training/data')
 
-const sliceSize = 100;
+const sliceSize = 10;
 
   const firstHundredAuthors = [
     {
@@ -85,24 +85,35 @@ export const detectBackEnd = (userText) => dispatch => {
   if (authorName) dispatch(detect(authorName, categoryTree[authorName]))
 }
 
-export const createNet = () => (dispatch) => {
-  console.log('starting!')
-  let net = new brain.recurrent.LSTM()
-  
-  net.train(firstHundredAuthors, {
-    // Defaults values --> expected validation
-  iterations: 200,    // the maximum times to iterate the training data --> number greater than 0
-  errorThresh: 0.005,   // the acceptable error percentage from training data --> number between 0 and 1
-  log: true,           // true to use console.log, when a function is supplied it is used --> Either true or a function
-  logPeriod: 20,        // iterations between logging out --> number greater than 0
-  learningRate: 0.3,    // scales with delta to effect training rate --> number between 0 and 1
-  momentum: 0.1,        // scales with next layer's change value --> number between 0 and 1
-  callback: null,       // a periodic call back that can be triggered while training --> null or function
-  callbackPeriod: 10,   // the number of iterations through the training data between callback calls --> number greater than 0
-  timeout: Infinity     // the max number of milliseconds to train for --> number greater than 0
-  })
-  // await axios.post('api/nets/session', {net})
-  dispatch(gotNet(net))
+export const createNet = (net) => (dispatch) => {
+  if (net !== undefined) {
+    // console.log('already have net: ', net)
+    dispatch(gotNet(net))
+  } else {
+    console.log('starting!')
+    let net = new brain.recurrent.LSTM()
+    
+    // net.train(firstHundredAuthors, {
+    //   // Defaults values --> expected validation
+    // iterations: 200,    // the maximum times to iterate the training data --> number greater than 0
+    // errorThresh: 0.005,   // the acceptable error percentage from training data --> number between 0 and 1
+    // log: true,           // true to use console.log, when a function is supplied it is used --> Either true or a function
+    // logPeriod: 20,        // iterations between logging out --> number greater than 0
+    // learningRate: 0.3,    // scales with delta to effect training rate --> number between 0 and 1
+    // momentum: 0.1,        // scales with next layer's change value --> number between 0 and 1
+    // callback: null,       // a periodic call back that can be triggered while training --> null or function
+    // callbackPeriod: 10,   // the number of iterations through the training data between callback calls --> number greater than 0
+    // timeout: Infinity     // the max number of milliseconds to train for --> number greater than 0
+    // })
+    // await axios.post('api/nets/session', {net})
+    dispatch(gotNet(net))
+  }
+}
+
+export const getNet = (name) => async (dispatch) => {
+  console.log('getting!')
+  const {data} = await axios.get(`/api/nets/${name}`)
+  dispatch(gotNet(data))
 }
 
 /**

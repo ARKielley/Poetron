@@ -1,6 +1,7 @@
 const router = require('express').Router()
 const { Net } = require('../db/models')
 const tokenizeString = require('../../script/training/new-approach')
+const runNet = require('../util')
 // const authorNetFunction = require('../util/author-net-function')
 module.exports = router
 
@@ -14,9 +15,14 @@ router.get('/', async (req, res, next) => {
   }
 })
 
-router.post('/session', async (req, res, next) => {
-  req.session.net = req.body.net
-  res.send(net)
+router.get('/:name', async (req, res, next) => {
+  try {
+    const net = await Net.findOne({where: {name: req.params.name}})
+    console.log(net.miniBackEndRun(['a']))
+    res.json(net)
+  } catch (err) {
+    next(err)
+  }
 })
 
 // router.post('/help', (req, res, next) => {
